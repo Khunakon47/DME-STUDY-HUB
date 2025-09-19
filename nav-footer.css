@@ -1,0 +1,337 @@
+/* ********************************* Nav-bar section ********************************* */
+@import url('https://fonts.googleapis.com/css2?family=Prompt&display=swap'); /*For front style*/
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css'); /*For Icon แว่น ตรง search-bar*/
+
+body{
+  font-family: "Inter", system-ui, sans-serif;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* ****************************** Nav-bar ****************************** */
+.navbar-section {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  padding: 0.7rem 3vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 0.3s ease;
+  background-color: #0b3d91;
+  color: white;
+  box-sizing: border-box;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  font-family: 'Prompt', sans-serif;
+}
+
+.web-name {
+  font-size: 1.3rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.nav-middle {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.nav-middle a, label{
+  color: white;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.category-menu {
+  position: relative;
+}
+
+.category-dropdown {
+  display: none;
+  position: absolute;
+  background-color: white;
+  border-radius: 10px;
+  padding: 0.5rem 0;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.1);
+  min-width: 250px;
+  z-index: 1000;
+  animation: fadeIn 0.3s ease;
+}
+
+.category-dropdown a {
+  display: block;
+  padding: 0.6rem 1rem;
+  color: #0b3d91;
+  font-size: 0.9rem;
+  text-decoration: none;
+}
+
+.category-dropdown a:hover {
+  background-color: #f0f6ff;
+}
+
+.category-menu:hover .category-dropdown {
+  display: block;
+}
+
+.search-bar {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem; 
+  padding: 0.3rem 0.8rem;
+  height: 25px;
+  background-color: white;
+  border-radius: 20px;
+  transition: all 0.3s ease;
+}
+
+.search-bar input {
+  flex: 1;
+  min-width: 200px;
+  border: none;
+  outline: none;
+  font-size: 0.8rem;
+  height: 100%; 
+  transition: all 0.3s ease;
+}
+
+.search-bar a {
+  font-size: 0;             
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.search-bar i {
+  font-size: 16px ; 
+  line-height: 1;
+  color: #0b3d91;
+}
+
+.search-bar:focus-within {
+  box-shadow: 0 0 8px rgba(11, 61, 145, 0.4);
+  transform: scale(1.05);
+}
+
+.search-bar input:focus {
+  min-width: 250px;
+}
+
+.nav-right {
+  display: flex;
+  gap: 1rem;
+}
+
+.notification-btn, .profile-btn{
+  font-size: 1.5rem;
+  color: white;
+}
+
+.notification-menu, .profile-menu {
+  position: relative;
+}
+
+.dot {
+  position: absolute;
+  top: 2px;
+  right: -1.2px;
+  height: 8px;
+  width: 8px;
+  background-color: red;
+  border-radius: 50%;
+}
+
+.notification-dropdown, .profile-dropdown {
+  display: none;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background-color: white;
+  border-radius: 10px;
+  width: 320px;
+  padding: 1rem;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+  z-index: 1000;
+  animation: fadeIn 0.3s ease;
+}
+
+.profile-dropdown {
+  width: 150px;
+  padding: 0.6rem 0;
+}
+
+.notification-dropdown h4 {
+  margin: 0 0 0.8rem;
+  font-size: 1rem;
+  color: #0b3d91;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 0.5rem;
+}
+
+.notification-item {
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.notification-item:last-child {
+  border-bottom: none;
+}
+
+.notification-item p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #333;
+}
+
+.notification-item span {
+  font-size: 0.75rem;
+  color: #888;
+}
+
+.profile-dropdown a {
+  display: block;
+  padding: 0.6rem 1rem;
+  color: #0b3d91;
+  font-size: 0.9rem;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.profile-dropdown a:hover {
+  background-color: #f0f6ff;
+}
+
+.profile-dropdown .logout-btn:hover{
+  background-color: #ffe5e5;;
+}
+
+.login-btn, .register-btn {
+  font-size: 1rem;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  transition: all 0.2s ease;
+  border: 1px solid white;
+}
+
+.login-btn{
+  color: white;
+}
+
+.register-btn{
+  background:white; 
+  color:#0b3d91;
+}
+
+.login-btn:hover {
+  background: rgba(255, 255, 255, 0.15);
+  color: white;
+}
+
+.register-btn:hover {
+  background: rgba(228, 228, 228, 0.822);
+  color: #0b3d91;
+}
+
+.login-btn:hover, .register-btn:hover {
+  transform: scale(1.05);
+}
+
+/* Animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/******************************************** Footer **************************************************************/
+.site-footer {
+  background: #0b3d91;
+  color: white;
+  padding: 4rem 15rem 2rem;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  font-family: 'Prompt', sans-serif;
+}
+
+.footer-top {
+  display: grid;
+  grid-template-columns: 2fr 3fr;
+  gap: 3rem;
+  margin-bottom: 2.5rem;
+}
+
+.footer-top h2, .footer-top h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: #ffffff;
+}
+
+.footer-top h3 {
+  font-size: 1.1rem;
+}
+
+.footer-top p,
+.footer-top a {
+  color: #ddd;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-top a:hover {
+  color: #ffffff;
+  text-decoration: underline;
+}
+
+.footer-top ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-top ul li {
+  margin-bottom: 0.5rem;
+}
+
+.footer-right {
+  display: flex;
+  justify-content: space-between;
+}
+
+.social-icons {
+  display: flex;
+  gap: 0.8rem;
+  margin-top: 0.5rem;
+}
+
+.social-icons a {
+  background-color: #ffffff20;
+  padding: 0.5rem;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s;
+}
+
+.social-icons a:hover {
+  background-color: #ffffff40;
+  transform: scale(1.1);
+}
+
+.social-icons svg {
+  width: 20px;
+  height: 20px;
+  stroke: white;
+}
+
+.footer-bottom {
+  text-align: center;
+  font-size: 0.9rem;
+  color: #cccccc;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  padding-top: 1rem;
+}

@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DME Study Hub</title>
+  <link rel="stylesheet" href="nav-footer-home.css">
+  <link rel="stylesheet" href="home.css">
+</head>
+<body>
+<!-- ********************************* Nav-bar section ********************************* -->
+<nav class="navbar-section" id="navbar">
+  <div class="nav-left">
+    <h2 class="web-name"><a href="home.html" style="text-decoration: none; color: white;">DME Study Hub</a></h2>
+  </div>
+
+  <div class="nav-middle">
+      <a class="home-btn" href="home.html">Home</a>
+      <div class="category-menu">
+          <label class="category-btn">Categories ▾</label>
+          <div class="category-dropdown">
+              <a href="browse-note.html">Basic Subjects</a>
+              <a href="browse-note.html">Assignments / Homework</a>
+              <a href="browse-note.html">Exam Summaries</a>
+              <a href="browse-note.html">Resume / Cv</a>
+              <a href="browse-note.html">Portfolio</a>
+          </div>
+      </div>
+      <a class="browse-btn" href="browse-note.html">Browse Notes</a>
+      <a class="upload-btn" href="upload.html">Upload</a>
+      <div class="category-menu">
+          <label class="about-btn">About ▾</label>
+          <div class="category-dropdown">
+              <a href="about.html">About us</a>
+              <a href="contact.html">Contact us</a>
+              <a href="faq.html">FAQs</a>
+              <a href="#">Privacy Policy</a>
+              <a href="#">Terms of Service</a>
+          </div>
+      </div>
+      <div class="search-bar">
+          <input type="text" placeholder="Search: Title, Tags, Author, Description">
+          <a href="browse-note.html" style="margin-left: 0.5rem;"><i class="fas fa-search"></i></a>
+      </div>
+  </div>
+
+  <div class="nav-right">
+      <!------------------------------------------------ ยังไม่ Login ------------------------------------------------>
+      <a class="login-btn" href="login.html">Login</a>
+      <a class="register-btn" href="register.html">Register</a>
+
+      <!------------------------------------------------ Login แล้ว ------------------------------------------------>
+      <!-- <div class="notification-menu">
+          <a class="notification-btn" href="#"><i class="fas fa-bell"></i><span class="dot"></span></a>
+          <div class="notification-dropdown">
+              <h4>🔔 Notification</h4>
+              <div class="notification-item">
+                  <p><strong>พี่น้ำ</strong> ติดตามคุณแล้ว</p>
+                  <span>5 นาทีที่แล้ว</span>
+              </div>
+              <div class="notification-item">
+                  <p><strong>พี่เต้</strong> อัปโหลดโน้ตใหม่: “แนวข้อสอบ UX”</p>
+                  <span>20 นาทีที่แล้ว</span>
+              </div>
+              <div class="notification-item">
+                  <p><strong>โน้ตของคุณ</strong> ได้รับ 5 ดาวจาก <strong>พี่ใบเตย</strong></p>
+                  <span>1 ชม.ที่แล้ว</span>
+              </div>
+              <div class="notification-item">
+                  <p><strong>ระบบ</strong>: โน้ตของคุณได้รับการอนุมัติแล้ว ✅</p>
+                  <span>เมื่อวานนี้</span>
+              </div>
+          </div>
+      </div>
+      
+      <div class="profile-menu">
+          <a class="profile-btn" href="#"><i class="fas fa-user-circle"></i></a>
+          <div class="profile-dropdown">
+              <a href="my-profile.html">My profile</a>
+              <a href="#">Setting</a>
+              <a class="logout-btn" href="#">Log out</a>
+          </div>
+      </div>
+  </div> -->
+</nav>
+
+<!-- ********************************* Hero section ************************************ -->
+<section class="hero-section">
+  <div class="hero-text" id="heroText">
+    <h1>
+      Empower Your Learning
+      <span>Digital Learning Hub</span>
+    </h1>
+    <p>Discover tools and resources that will revolutionize the way you study. From foundational lessons to advanced techniques, stay ahead in your coursework with easy-to-access notes and guided materials. Connect with peers, share insights, and achieve your academic goals with confidence and ease.</p>
+    <div class="cta-buttons">
+      <a href="browse-note.html" class="primary-hero-btn">Get Started</a>
+      <a href="about.html" class="secondary-hero-btn">Learn More</a>
+    </div>
+  </div>
+  <div class="hero-image reveal-on-load" style="margin-left: 3rem; margin-bottom: -5rem;">
+    <img src="images/cta-sec-home.svg" alt="Student studying illustration">
+  </div>
+</section>
+
+<!-- ********************************* Key Features section ********************************* -->
+<section class="key-features-section">
+  <div class="key-features-container">
+    <p class="feature-badge">🔹 Key Features</p>
+    <h2 class="feature-heading">Built to Empower DME Students</h2>
+    <p class="feature-subtitle">
+      Discover powerful tools and a supportive community to help you learn, share, and succeed at every step of your academic journey.
+    </p>
+
+    <div class="feature-grid">
+      <div class="feature-card">
+        <div class="feature-icon"><i data-feather="check-circle"></i></div>
+        <h3>Verified Notes</h3>
+        <p>Every file is reviewed to ensure accuracy and relevance before going public.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon"><i data-feather="upload-cloud"></i></div>
+        <h3>Easy Uploads</h3>
+        <p>Upload your class notes in seconds with support for PDF and DOCX formats.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon"><i data-feather="users"></i></div>
+        <h3>Peer Community</h3>
+        <p>Connect with senior students, share tips, and support each other's learning.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon"><i data-feather="search"></i></div>
+        <h3>Advanced Search</h3>
+        <p>Find notes by keyword, category, or contributor — fast and easy.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon"><i data-feather="star"></i></div>
+        <h3>Contributor Ratings</h3>
+        <p>Follow and rate your favorite uploaders to build a trusted study network.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon"><i data-feather="lock"></i></div>
+        <h3>Ad-Free & Secure</h3>
+        <p>No ads. No tracking. 100% safe for students to focus on learning.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ********************************* Latest section ********************************** -->
+<section class="latest-notes-section">
+  <div class="latest-notes-container">
+    <h2 class="section-heading">Latest Notes</h2>
+    <p class="section-subtitle">
+      Discover the most recent study notes, summaries, and exam materials contributed by DME students. Stay ahead with fresh, peer-reviewed content designed to help you excel
+    </p>
+
+    <div class="cards">
+          <!-- Card 1 -->
+          <div class="card">
+            <header>
+              <div class="title-wrap">
+                <div class="title"><a href="note.html">Digital Signal Processing</a></div>
+                <div class="meta">
+                  <span class="author">Bow</span>
+                  <span>| Updated 2 days ago</span>
+                </div>
+              </div>
+
+              <button class="fav-btn">★</button>
+            </header>
+
+            <p class="desc">
+              Overview of FIR and IIR filter design, windowed methods, frequency sampling techniques,
+              step-by-step computations, pros/cons, and practical tips for the final exam.
+            </p>
+
+            <div class="foot">
+              <div class="tags">
+                <span class="badge">PDF</span>
+                <span class="badge">Year 3</span>
+                <span class="badge">Exam Prep</span>
+              </div>
+              <span class="meta">1.2k views | 12 pages</span>
+            </div>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="card">
+            <header>
+              <div class="title-wrap">
+                <div class="title"><a href="#">
+                  Computer Graphics Shader Basics and practical snippets for student projects and demos
+                </a></div>
+                <div class="meta">
+                  <span class="author" title="x">Mint</span>
+                  <span>| Updated 5 days ago</span>
+                </div>
+              </div>
+
+              <button class="fav-btn">★</button>
+            </header>
+            <p class="desc">
+              Vertex and fragment shader fundamentals, GLSL snippets, pipeline overview, and simple
+              lighting techniques useful for coursework and project demonstrations.
+            </p>
+            <div class="foot">
+              <div class="tags">
+                <span class="badge">Slides</span>
+                <span class="badge">Code</span>
+              </div>
+              <span class="meta">845 views | 18 pages</span>
+            </div>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="card">
+            <header>
+              <div class="title-wrap">
+                <div class="title"><a href="#">
+                  Discrete Mathematics concise cheat-sheet with practice problems and quick references
+                </a></div>
+                <div class="meta">
+                  <span class="author" title="Joe">Joe</span>
+                  <span>| Updated 22 Aug 2568</span>
+                </div>
+              </div>
+
+              <button class="fav-btn">★</button>
+            </header>
+
+            <p class="desc">
+              Logic, sets, relations, graph basics, Venn diagrams and sample exam problems with
+              worked solutions for fast revision.
+            </p>
+
+            <div class="foot">
+              <div class="tags">
+                <span class="badge">PDF</span>
+                <span class="badge">Quick summary</span>
+              </div>
+              <span class="meta">2.4k views | 9 pages</span>
+            </div>
+          </div>
+
+          <!-- Card 1 -->
+          <div class="card">
+            <header>
+              <div class="title-wrap">
+                <div class="title"><a href="note.html">Digital Signal Processing</a></div>
+                <div class="meta">
+                  <span class="author">Bow</span>
+                  <span>| Updated 2 days ago</span>
+                </div>
+              </div>
+
+              <button class="fav-btn">★</button>
+            </header>
+
+            <p class="desc">
+              Overview of FIR and IIR filter design, windowed methods, frequency sampling techniques,
+              step-by-step computations, pros/cons, and practical tips for the final exam.
+            </p>
+
+            <div class="foot">
+              <div class="tags">
+                <span class="badge">PDF</span>
+                <span class="badge">Year 3</span>
+                <span class="badge">Exam Prep</span>
+              </div>
+              <span class="meta">1.2k views | 12 pages</span>
+            </div>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="card">
+            <header>
+              <div class="title-wrap">
+                <div class="title"><a href="#">
+                  Computer Graphics Shader Basics and practical snippets for student projects and demos
+                </a></div>
+                <div class="meta">
+                  <span class="author" title="x">Mint</span>
+                  <span>| Updated 5 days ago</span>
+                </div>
+              </div>
+
+              <button class="fav-btn">★</button>
+            </header>
+            <p class="desc">
+              Vertex and fragment shader fundamentals, GLSL snippets, pipeline overview, and simple
+              lighting techniques useful for coursework and project demonstrations.
+            </p>
+            <div class="foot">
+              <div class="tags">
+                <span class="badge">Slides</span>
+                <span class="badge">Code</span>
+              </div>
+              <span class="meta">845 views | 18 pages</span>
+            </div>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="card">
+            <header>
+              <div class="title-wrap">
+                <div class="title"><a href="#">
+                  Discrete Mathematics concise cheat-sheet with practice problems and quick references
+                </a></div>
+                <div class="meta">
+                  <span class="author" title="Joe">Joe</span>
+                  <span>| Updated 22 Aug 2568</span>
+                </div>
+              </div>
+
+              <button class="fav-btn">★</button>
+            </header>
+
+            <p class="desc">
+              Logic, sets, relations, graph basics, Venn diagrams and sample exam problems with
+              worked solutions for fast revision.
+            </p>
+
+            <div class="foot">
+              <div class="tags">
+                <span class="badge">PDF</span>
+                <span class="badge">Quick summary</span>
+              </div>
+              <span class="meta">2.4k views | 9 pages</span>
+            </div>
+          </div>
+
+      </div>
+
+      <div class="see-all">
+        <button onclick="window.location.href='browse-note.html'" class="see-all-btn"><i data-feather="search"></i>See All Notes</button>
+      </div>
+    </div>
+</section>
+
+<!-- ********************************* contributors section **************************** -->
+<section class="top-contributors-section">
+  <div class="top-contributors-container">
+    <h2 class="contributors-title">Top Contributors</h2>
+    <p class="contributors-subtext">
+      Meet the most dedicated DME students who consistently share their notes and help the community grow stronger.
+    </p>
+
+    <div class="contributors-grid">
+      <!-- Contributor 1 -->
+      <div class="contributor-card">
+        <div class="medal gold">🥇</div>
+        <img class="avatar" src="https://i.pravatar.cc/100?img=1" alt="Contributor 1">
+        <h3 class="name">P’Nam</h3>
+        <p class="uploads">35 notes uploaded</p>
+        <a href="user-profile.html" class="view-profile-btn">View Profile</a>
+      </div>
+
+      <!-- Contributor 2 -->
+      <div class="contributor-card">
+        <div class="medal silver">🥈</div>
+        <img class="avatar" src="https://i.pravatar.cc/100?img=2" alt="Contributor 2">
+        <h3 class="name">P’Tae</h3>
+        <p class="uploads">28 notes uploaded</p>
+        <a href="user-profile.html" class="view-profile-btn">View Profile</a>
+      </div>
+
+      <!-- Contributor 3 -->
+      <div class="contributor-card">
+        <div class="medal bronze">🥉</div>
+        <img class="avatar" src="https://i.pravatar.cc/100?img=3" alt="Contributor 3">
+        <h3 class="name">P’Ploy</h3>
+        <p class="uploads">22 notes uploaded</p>
+        <a href="user-profile.html" class="view-profile-btn">View Profile</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ********************************* quickstart section **************************** -->
+<section class="quickstart-pro">
+  <div class="quickstart-container">
+    <div class="quickstart-content">
+      <h2 class="quickstart-title">How to Get Started</h2>
+      <p class="quickstart-subtitle">
+        It's quick and easy to contribute or find the resources you need. Whether you're a sharer or a learner, these simple steps will guide your journey.
+      </p>
+
+      <div class="quickstart-step">
+        <div class="icon-circle"><i data-feather="log-in"></i></div>
+        <div class="step-text">
+          <h3>Sign In or Register</h3>
+          <p>Access your account to start uploading or exploring thousands of quality notes shared by DME seniors.</p>
+        </div>
+      </div>
+
+      <div class="quickstart-step">
+        <div class="icon-circle"><i data-feather="upload-cloud"></i></div>
+        <div class="step-text">
+          <h3>Upload Notes with Ease</h3>
+          <p>Select your file, categorize it, and provide a short description. Our system supports PDF, DOC, and DOCX formats.</p>
+        </div>
+      </div>
+
+      <div class="quickstart-step">
+        <div class="icon-circle"><i data-feather="eye"></i></div>
+        <div class="step-text">
+          <h3>Wait for Approval</h3>
+          <p>Each note is reviewed for quality and clarity to ensure it meets the needs of fellow students.</p>
+        </div>
+      </div>
+
+      <div class="quickstart-step">
+        <div class="icon-circle"><i data-feather="users"></i></div>
+        <div class="step-text">
+          <h3>Engage with the Community</h3>
+          <p>Give stars, leave comments, and follow other contributors to build connections and foster learning.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="quickstart-image">
+      <img src="images/quickstart-sec-home.svg" alt="Students studying illustration">
+    </div>
+  </div>
+</section>
+
+<!-- ********************************* FAQ section **************************** -->
+<section class="faq-section">
+  <div class="faq-container">
+    <h2 class="faq-heading">Frequently Asked Questions</h2>
+
+    <div class="faq-list">
+
+      <div class="faq-item">
+        <button class="faq-question">
+          <span>Is this platform completely free?</span>
+          <i data-feather="chevron-down" class="faq-icon"></i>
+        </button>
+        <div class="faq-answer">
+          <p>Yes, DME Study Hub is 100% free with no hidden fees or advertisements.</p>
+          <p class="th">ใช่ เว็บไซต์นี้ให้บริการฟรีทั้งหมด ไม่มีโฆษณา และไม่มีค่าใช้จ่ายแอบแฝงใด ๆ</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">
+          <span>How do I upload notes?</span>
+          <i data-feather="chevron-down" class="faq-icon"></i>
+        </button>
+        <div class="faq-answer">
+          <p>Login and visit the Upload page. Choose your file, select category, and submit.</p>
+          <p class="th">เข้าสู่ระบบ แล้วไปที่หน้าการอัปโหลด เลือกไฟล์ หมวดหมู่ และกดส่งได้เลย</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">
+          <span>How long does approval take?</span>
+          <i data-feather="chevron-down" class="faq-icon"></i>
+        </button>
+        <div class="faq-answer">
+          <p>Usually within 24 hours after submission, based on admin review.</p>
+          <p class="th">ปกติใช้เวลาไม่เกิน 24 ชั่วโมงหลังส่ง โดยทีมงานจะตรวจสอบเนื้อหาก่อน</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">
+          <span>Can anyone see my uploaded notes?</span>
+          <i data-feather="chevron-down" class="faq-icon"></i>
+        </button>
+        <div class="faq-answer">
+          <p>Yes, once approved, your notes will be publicly viewable to all users.</p>
+          <p class="th">หลังจากผ่านการอนุมัติแล้ว โน้ตของคุณจะสามารถดูได้โดยผู้ใช้ทุกคน</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">
+          <span>How can I follow a top contributor?</span>
+          <i data-feather="chevron-down" class="faq-icon"></i>
+        </button>
+        <div class="faq-answer">
+          <p>Go to their profile and click "Follow" to stay updated with new uploads.</p>
+          <p class="th">ไปที่หน้าโปรไฟล์ของรุ่นพี่ แล้วกด "ติดตาม" เพื่อรับการแจ้งเตือน</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">
+          <span>Can I edit or delete my notes?</span>
+          <i data-feather="chevron-down" class="faq-icon"></i>
+        </button>
+        <div class="faq-answer">
+          <p>Yes, go to your profile and click the three-dot menu on any note to edit or delete.</p>
+          <p class="th">ได้ คุณสามารถไปที่หน้าโปรไฟล์ แล้วกดปุ่ม 3 จุดที่มุมโน้ตเพื่อแก้ไขหรือลบ</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">
+          <span>What file types are supported?</span>
+          <i data-feather="chevron-down" class="faq-icon"></i>
+        </button>
+        <div class="faq-answer">
+          <p>Currently PDF, DOC, and DOCX files are supported.</p>
+          <p class="th">รองรับเฉพาะไฟล์ PDF, DOC และ DOCX เท่านั้น</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">
+          <span>Can I leave comments on notes?</span>
+          <i data-feather="chevron-down" class="faq-icon"></i>
+        </button>
+        <div class="faq-answer">
+          <p>Yes, logged-in users can freely comment on any public notes.</p>
+          <p class="th">สามารถแสดงความคิดเห็นได้ทุกโน้ต (สำหรับผู้ใช้ที่เข้าสู่ระบบ)</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ********************************* testimonial section **************************** -->
+<section class="testimonial-section">
+  <div class="testimonial-container">
+    <h2 class="testimonial-title">What Students Say</h2>
+    <p class="testimonial-subtext">
+      Real feedback from DME students who've benefited from using DME Study Hub to learn smarter.
+    </p>
+    <div class="testimonial-grid">
+      <div class="testimonial-card">
+        <img class="avatar" src="https://i.pravatar.cc/120?img=10" alt="Student Avatar">
+        <p class="quote">"The notes here helped me pass my midterms. Thank you for creating such a supportive community!"</p>
+        <h3 class="name">P'Nam, Year 3</h3>
+      </div>
+      <div class="testimonial-card">
+        <img class="avatar" src="https://i.pravatar.cc/120?img=20" alt="Student Avatar">
+        <p class="quote">"Uploading my notes was easy and the platform is ad-free. I've shared 15 notes and received great feedback."</p>
+        <h3 class="name">P'Tae, Year 2</h3>
+      </div>
+      <div class="testimonial-card">
+        <img class="avatar" src="https://i.pravatar.cc/120?img=30" alt="Student Avatar">
+        <p class="quote">"I found notes for every course I took—no more searching in group chats. It's reliable and fast!"</p>
+        <h3 class="name">P'Ploy, Year 4</h3>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ********************************* About section **************************** -->
+<section class="about-dme-section">
+  <div class="about-container">
+    <div class="about-text">
+      <h2>About DME Study Hub</h2>
+      <p>
+        DME Study Hub is a student-driven platform built by and for Digital Media Engineering students at Khon Kaen University. 
+        Our mission is to promote a culture of academic collaboration through quality resources, real experiences, and shared insights. 
+        Whether you're preparing for an exam, looking for assignment tips, or sharing your own study notes with juniors, 
+        this is your space to grow together as a community.
+      </p>
+      <a href="about.html" class="read-more-btn">Read more</a>
+    </div>
+    <div class="about-image">
+      <img src="images/about-sec-home.svg" alt="Library">
+    </div>
+  </div>
+</section>
+
+<!-- ********************************* CTA section **************************** -->
+<section class="cta-bottom-section">
+  <div class="cta-bottom-container">
+    <div class="cta-content">
+      <h1>Learn Smarter, <br>Not Harder</h1>
+      <p>
+        Access study notes, past exams, and helpful tips from senior DME students. 
+        Prepare with confidence and get ahead in your learning journey.
+      </p>
+      <a href="browse-note.html" class="cta-btn">Get Started</a>
+      <a href="upload.html" class="cta-btn2">Upload Notes</a>
+    </div>
+
+    <div class="cta-image">
+      <img src="images/cta-sec-home.svg" alt="Student studying illustration">
+    </div>
+  </div>
+</section>
+
+<!-- ********************************* Footer section ********************************** -->
+<footer class="site-footer">
+  <div class="footer-top">
+    <!-- Logo & About -->
+    <div class="footer-logo">
+      <h2>DME Study Hub</h2>
+      <p>A note-sharing platform by Digital Media Engineering students – helping connect learning experiences across generations with quality resources.</p>
+    </div>
+
+    <div class="footer-right">
+    <!-- Main Menu -->
+    <div class="footer-links">
+      <h3>Main Menu</h3>
+      <ul>
+        <li><a href="home.html">Home</a></li>
+        <li><a href="find-note.html">Find Notes</a></li>
+        <li><a href="top-user.html">Top Contributors</a></li>
+        <li><a href="upload.html">Upload</a></li>
+      </ul>
+    </div>
+
+    <!-- Help -->
+    <div class="footer-help">
+      <h3>Help & Support</h3>
+      <ul>
+        <li><a href="#">FAQs</a></li>
+        <li><a href="#">User Guide</a></li>
+        <li><a href="#">Contact Team</a></li>
+        <li><a href="#">Report an Issue</a></li>
+      </ul>
+    </div>
+
+    <!-- Contact -->
+    <div class="footer-contact">
+      <h3>Connect With Us</h3>
+      <p>Email: dme.studyhub@gmail.com</p>
+      <div class="social-icons">
+        <a href="#"><i data-feather="facebook"></i></a>
+        <a href="#"><i data-feather="instagram"></i></a>
+        <a href="#"><i data-feather="mail"></i></a>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <div class="footer-bottom">
+    <p>&copy; <span id="year"></span> DME Study Hub. All rights reserved.</p>
+  </div>
+</footer>
+
+<script src="https://unpkg.com/feather-icons"></script>
+<script src="home.js"></script>
+</body>
+</html>

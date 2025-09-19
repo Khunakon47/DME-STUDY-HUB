@@ -1,0 +1,727 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>FAQs | DME Study Hub</title>
+  <link rel="stylesheet" href="nav-footer.css">
+  <link rel="stylesheet" href="faq.css">
+</head>
+<body>
+<!-- nav-bar -->
+<nav class="navbar-section" id="navbar">
+  <div class="nav-left">
+    <h2 class="web-name"><a href="home.html" style="text-decoration: none; color: white;">DME Study Hub</a></h2>
+  </div>
+
+  <div class="nav-middle">
+      <a class="home-btn" href="home.html">Home</a>
+      <div class="category-menu">
+          <label class="category-btn">Categories ▾</label>
+          <div class="category-dropdown">
+              <a href="browse-note.html">Basic Subjects</a>
+              <a href="browse-note.html">Assignments / Homework</a>
+              <a href="browse-note.html">Exam Summaries</a>
+              <a href="browse-note.html">Resume / Cv</a>
+              <a href="browse-note.html">Portfolio</a>
+          </div>
+      </div>
+      <a class="browse-btn" href="browse-note.html">Browse Notes</a>
+      <a class="upload-btn" href="upload.html">Upload</a>
+      <div class="category-menu">
+          <label class="about-btn">About ▾</label>
+          <div class="category-dropdown">
+              <a href="about.html">About us</a>
+              <a href="contact.html">Contact us</a>
+              <a href="faq.html">FAQs</a>
+              <a href="#">Privacy Policy</a>
+              <a href="#">Terms of Service</a>
+          </div>
+      </div>
+      <div class="search-bar">
+          <input type="text" placeholder="Search: Title, Tags, Author, Description">
+          <a href="browse-note.html" style="margin-left: 0.5rem;"><i class="fas fa-search"></i></a>
+      </div>
+  </div>
+
+  <div class="nav-right">
+      <!------------------------------------------------ ยังไม่ Login ------------------------------------------------>
+      <a class="login-btn" href="login.html">Login</a>
+      <a class="register-btn" href="register.html">Register</a>
+
+      <!------------------------------------------------ Login แล้ว ------------------------------------------------>
+      <!-- <div class="notification-menu">
+          <a class="notification-btn" href="#"><i class="fas fa-bell"></i><span class="dot"></span></a>
+          <div class="notification-dropdown">
+              <h4>🔔 Notification</h4>
+              <div class="notification-item">
+                  <p><strong>พี่น้ำ</strong> ติดตามคุณแล้ว</p>
+                  <span>5 นาทีที่แล้ว</span>
+              </div>
+              <div class="notification-item">
+                  <p><strong>พี่เต้</strong> อัปโหลดโน้ตใหม่: “แนวข้อสอบ UX”</p>
+                  <span>20 นาทีที่แล้ว</span>
+              </div>
+              <div class="notification-item">
+                  <p><strong>โน้ตของคุณ</strong> ได้รับ 5 ดาวจาก <strong>พี่ใบเตย</strong></p>
+                  <span>1 ชม.ที่แล้ว</span>
+              </div>
+              <div class="notification-item">
+                  <p><strong>ระบบ</strong>: โน้ตของคุณได้รับการอนุมัติแล้ว ✅</p>
+                  <span>เมื่อวานนี้</span>
+              </div>
+          </div>
+      </div>
+      
+      <div class="profile-menu">
+          <a class="profile-btn" href="#"><i class="fas fa-user-circle"></i></a>
+          <div class="profile-dropdown">
+              <a href="my-profile.html">My profile</a>
+              <a href="#">Setting</a>
+              <a class="logout-btn" href="#">Log out</a>
+          </div>
+      </div>
+  </div> -->
+</nav>
+
+<main>
+  <nav class="breadcrumbs animate-fadeInUp">
+    <a href="home.html">Home</a> &gt;
+    <span>Frequently Asked Questions</span>
+  </nav>
+
+  <!-- Page Header -->
+  <section class="page-header animate-fadeInUp animate-delay-1">
+    <div class="page-header-content">
+      <h1>Frequently Asked Questions</h1>
+      <p>Everything you need to know about DME Study Hub - from getting started to becoming a top contributor!</p>
+      
+      <div class="header-stats">
+        <div class="stat-item">
+          <span class="stat-number">25+</span>
+          <span class="stat-label">Questions Answered</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number">24/7</span>
+          <span class="stat-label">Available Help</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number">100%</span>
+          <span class="stat-label">Free Support</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Search Section -->
+  <section class="search-section animate-fadeInUp animate-delay-1">
+    <h2 class="search-title">🔍 Find Your Answer</h2>
+    <p class="search-subtitle">Search through our comprehensive FAQ database or browse by category</p>
+    <div class="search-container">
+      <input type="text" class="search-input" placeholder="Type your question or keyword here..." id="searchInput">
+      <i data-feather="search" class="search-icon"></i>
+    </div>
+  </section>
+
+  <!-- FAQ Container -->
+  <div class="faq-container">
+    <!-- Category Navigation -->
+    <aside class="category-nav animate-slideInLeft animate-delay-2">
+      <h3>📚 Categories</h3>
+      <a href="#general" class="nav-item active" data-category="general">
+        <span>🌟 General Questions</span>
+      </a>
+      <a href="#upload" class="nav-item" data-category="upload">
+        <span>📤 Upload & Content</span>
+      </a>
+      <a href="#account" class="nav-item" data-category="account">
+        <span>👤 Account & Profile</span>
+      </a>
+      <a href="#browsing" class="nav-item" data-category="browsing">
+        <span>🔍 Browsing & Search</span>
+      </a>
+      <a href="#technical" class="nav-item" data-category="technical">
+        <span>⚙️ Technical Issues</span>
+      </a>
+    </aside>
+
+    <!-- FAQ Content -->
+    <div class="faq-content animate-fadeInUp animate-delay-3">
+      <!-- General Questions -->
+      <div class="category-section" id="general">
+        <h2 class="category-title">🌟 General Questions</h2>
+        <div class="faq-list">
+          <div class="faq-item">
+            <button class="faq-question">
+              <span>Is this platform completely free?</span>
+              <i data-feather="chevron-down" class="faq-icon"></i>
+            </button>
+            <div class="faq-answer">
+              <p>Yes, DME Study Hub is 100% free with no hidden fees, premium subscriptions, or advertisements. Our goal is to provide accessible education resources for all students.</p>
+              <p class="th">ใช่ เว็บไซต์นี้ให้บริการฟรีทั้งหมด ไม่มีค่าธรรมเนียม การสมัครพรีเมียม หรือโฆษณา เป้าหมายคือการให้ทรัพยากรการศึกษาที่เข้าถึงได้สำหรับนักเรียนทุกคน</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question">
+              <span>Who can use this platform?</span>
+              <i data-feather="chevron-down" class="faq-icon"></i>
+            </button>
+            <div class="faq-answer">
+              <p>Anyone can browse and download notes without registration. However, you need to create a free account to upload content, leave comments, rate notes, or follow other users.</p>
+              <p class="th">ทุกคนสามารถดูและดาวน์โหลดโน้ตได้โดยไม่ต้องสมัคร แต่ต้องสร้างบัญชีฟรีเพื่ออัปโหลดเนื้อหา แสดงความคิดเห็น ให้คะแนน หรือติดตามผู้ใช้อื่น</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question">
+              <span>What makes this different from other study platforms?</span>
+              <i data-feather="chevron-down" class="faq-icon"></i>
+            </button>
+            <div class="faq-answer">
+              <p>DME Study Hub is created by and for Digital Media Engineering students, ensuring content relevance. We focus on peer-to-peer learning with a strong community aspect and quality control.</p>
+              <p class="th">DME Study Hub สร้างโดยและสำหรับนักศึกษาวิศวกรรมดิจิทัลมีเดีย ทำให้เนื้อหามีความเกี่ยวข้อง เน้นการเรียนรู้แบบเพื่อนช่วยเพื่อนและมีชุมชนที่แข็งแกร่ง</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Upload & Content -->
+      <div class="category-section" id="upload">
+        <h2 class="category-title">📤 Upload & Content</h2>
+        <div class="faq-list">
+          <div class="faq-item">
+            <button class="faq-question">
+              <span>How do I upload notes?</span>
+              <i data-feather="chevron-down" class="faq-icon"></i>
+            </button>
+            <div class="faq-answer">
+              <p>First, log into your account and navigate to the Upload page. Select your file, choose the appropriate category, add a descriptive title, write a brief description, add relevant tags, and submit for review.</p>
+              <p class="th">เข้าสู่ระบบแล้วไปที่หน้าอัปโหลด เลือกไฟล์ หมวดหมู่ ใส่ชื่อที่อธิบายได้ เขียนคำอธิบายสั้นๆ ใส่แท็กที่เกี่ยวข้อง และส่งเพื่อตรวจสอบ</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question">
+              <span>What file types and sizes are supported?</span>
+              <i data-feather="chevron-down" class="faq-icon"></i>
+            </button>
+            <div class="faq-answer">
+              <p>We accept PDF, DOC, DOCX, and PPT files. Maximum file size is 25MB per upload. For larger files, consider compressing or splitting them into smaller parts.</p>
+              <p class="th">รับไฟล์ PDF, DOC, DOCX และ PPT ขนาดสูงสุด 25MB ต่อการอัปโหลด สำหรับไฟล์ใหญ่ควรบีบอัดหรือแบ่งเป็นส่วนเล็กๆ</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question">
+              <span>How long does the approval process take?</span>
+              <i data-feather="chevron-down" class="faq-icon"></i>
+            </button>
+            <div class="faq-answer">
+              <p>Most submissions are reviewed within 24-48 hours. Our team checks for content quality, appropriateness, and compliance with academic integrity guidelines. You'll receive a notification once approved.</p>
+              <p class="th">ส่วนใหญ่ใช้เวลา 24-48 ชั่วโมง ทีมงานตรวจสอบคุณภาพ ความเหมาะสม และการปฏิบัติตามหลักจรรยาบรรณทางวิชาการ จะได้รับแจ้งเตือนเมื่ออนุมัติแล้ว</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question">
+              <span>Can I edit or delete my uploaded content?</span>
+              <i data-feather="chevron-down" class="faq-icon"></i>
+            </button>
+            <div class="faq-answer">
+              <p>Yes! Go to your profile page, find your uploaded content, and click the three-dot menu to edit details or delete the item completely. Note that deleting removes all associated ratings and comments.</p>
+              <p class="th">ได้! ไปที่หน้าโปรไฟล์ หาเนื้อหาที่อัปโหลด และกดเมนู 3 จุดเพื่อแก้ไขหรือลบ การลบจะทำให้คะแนนและความคิดเห็นทั้งหมดหายไปด้วย</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Account & Profile -->
+      <div class="category-section" id="account">
+        <h2 class="category-title">👤 Account & Profile</h2>
+        <div class="faq-list">
+          <div class="faq-item">
+            <button class="faq-question">
+              <span>How do I create an account?</span>
+              <i data-feather="chevron-down" class="faq-icon"></i>
+            </button>
+            <div class="faq-answer">
+              <p>Click "Register" in the top navigation, fill out the form with your email, create a password, and verify your email address. Registration is completely free and takes less than 2 minutes.</p>
+              <p class="th">กด "สมัครสมาชิก" ที่เมนูบน กรอกฟอร์มด้วยอีเมล สร้างรหัสผ่าน และยืนยันอีเมล การสมัครฟรีและใช้เวลาไม่ถึง 2 นาที</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question">
+              <span>How can I follow top contributors?</span>
+              <i data-feather="chevron-down" class="faq-icon"></i>
+            </button>
+            <div class="faq-answer">
+              <p>Visit any user's profile page and click the "Follow" button. You'll receive notifications when they upload new content. You can also browse our "Top Contributors" page to discover active members.</p>
+              <p class="th">เยี่ยมชมหน้าโปรไฟล์ของผู้ใช้และกด "ติดตาม" จะได้รับแจ้งเตือนเมื่อมีการอัปโหลดใหม่ สามารถดูหน้า "ผู้สนับสนุนชั้นนำ" เพื่อค้นหาสมาชิกที่มีความกระตือรือร้น</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question">
+              <span>How do I change my profile picture and information?</span>
+              <i data-feather="chevron-down" class="faq-icon"></i>
+            </button>
+            <div class="faq-answer">
+              <p>Go to your profile page and click "Edit Profile". You can update your profile picture (JPG/PNG, max 5MB), bio, year of study, and interests. Changes are saved automatically.</p>
+              <p class="th">ไปที่หน้าโปรไฟล์และกด "แก้ไขโปรไฟล์" สามารถเปลี่ยนรูปโปรไฟล์ (JPG/PNG ขนาดสูงสุด 5MB) ประวัติ ชั้นปี และความสนใจ การเปลี่ยนแปลงจะถูกบันทึกอัตโนมัติ</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question">
+              <span>What if I forget my password?</span>
+              <i data-feather="chevron-down" class="faq-icon"></i>
+            </button>
+            <div class="faq-answer">
+              <p>Click "Forgot Password?" on the login page, enter your email address, and we'll send you a secure reset link. Check your spam folder if you don't see the email within 5 minutes.</p>
+              <p class="th">กด "ลืมรหัสผ่าน?" ที่หน้าเข้าสู่ระบบ ใส่อีเมล และเราจะส่งลิงก์รีเซ็ตที่ปลอดภัย ตรวจสอบโฟลเดอร์สแปมหากไม่เห็นอีเมลภายใน 5 นาที</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Browsing & Search -->
+      <div class="category-section" id="browsing">
+        <h2 class="category-title">🔍 Browsing & Search</h2>
+        <div class="faq-list">
+          <div class="faq-item">
+            <button class="faq-question">
+              <span>How do I search for specific notes?</span>
+              <i data-feather="chevron-down" class="faq-icon"></i>
+            </button>
+            <div class="faq-answer">
+              <p>Use the search bar at the top of the page to search by title, tags, author, or description. You can also filter results by category, rating, upload date, and file type on the Browse Notes page.</p>
+              <p class="th">ใช้ช่องค้นหาด้านบนของหน้าเพื่อค้นหาจากชื่อ แท็ก ผู้เขียน หรือคำอธิบาย สามารถกรองผลลัพธ์ตามหมวดหมู่ คะแนน วันที่อัปโหลด และประเภทไฟล์ได้</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question">
+              <span>Can I leave comments and ratings on notes?</span>
+              <i data-feather="chevron-down" class="faq-icon"></i>
+            </button>
+            <div class="faq-answer">
+              <p>Yes! Registered users can comment on any public note and rate them from 1-5 stars. Comments help create discussions and provide feedback to uploaders about content quality.</p>
+              <p class="th">ได้! ผู้ใช้ที่ลงทะเบียนสามารถแสดงความคิดเห็นและให้คะแนน 1-5 ดาวได้ ความคิดเห็นช่วยสร้างการสนทนาและให้ข้อเสนอแนะเกี่ยวกับคุณภาพเนื้อหา</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question">
+              <span>How does the rating system work?</span>
+              <i data-feather="chevron-down" class="faq-icon"></i>
+            </button>
+            <div class="faq-answer">
+              <p>Users rate notes based on quality, accuracy, and usefulness (1-5 stars). Average ratings help others identify the best content. High-rated notes appear higher in search results.</p>
+              <p class="th">ผู้ใช้ให้คะแนนตามคุณภาพ ความถูกต้อง และประโยชน์ (1-5 ดาว) คะแนนเฉลี่ยช่วยให้ผู้อื่นระบุเนื้อหาที่ดีที่สุด โน้ตที่มีคะแนนสูงจะปรากฏในผลการค้นหาก่อน</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question">
+              <span>Can I download notes for offline use?</span>
+              <i data-feather="chevron-down" class="faq-icon"></i>
+            </button>
+            <div class="faq-answer">
+              <p>Absolutely! All approved notes can be downloaded in their original format for offline studying. There's no limit to how many files you can download.</p>
+              <p class="th">แน่นอน! โน้ตที่ได้รับอนุมัติทั้งหมดสามารถดาวน์โหลดในรูปแบบเดิมเพื่อการศึกษาออฟไลน์ ไม่มีขิดจำกัดจำนวนไฟล์ที่ดาวน์โหลดได้</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Technical Issues -->
+      <div class="category-section" id="technical">
+        <h2 class="category-title">⚙️ Technical Issues</h2>
+        <div class="faq-list">
+          <div class="faq-item">
+            <button class="faq-question">
+              <span>What if my file won't upload?</span>
+              <i data-feather="chevron-down" class="faq-icon"></i>
+            </button>
+            <div class="faq-answer">
+              <p>Check that your file is under 25MB and in a supported format (PDF, DOC, DOCX, PPT). Try refreshing the page, clearing your browser cache, or using a different browser. Contact support if issues persist.</p>
+              <p class="th">ตรวจสอบว่าไฟล์มีขนาดต่ำกว่า 25MB และอยู่ในรูปแบบที่รองรับ (PDF, DOC, DOCX, PPT) ลองรีเฟรชหน้า ล้างแคชเบราว์เซอร์ หรือใช้เบราว์เซอร์อื่น ติดต่อฝ่ายสนับสนุนหากยังมีปัญหา</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question">
+              <span>The website seems slow or won't load properly</span>
+              <i data-feather="chevron-down" class="faq-icon"></i>
+            </button>
+            <div class="faq-answer">
+              <p>Try clearing your browser cache, disabling browser extensions, or using an incognito/private window. Check your internet connection and try accessing from a different device or network.</p>
+              <p class="th">ลองล้างแคชเบราว์เซอร์ ปิดส่วนเสริม หรือใช้หน้าต่างไม่ระบุตัวตน ตรวจสอบการเชื่อมต่ออินเทอร์เน็ตและลองเข้าจากอุปกรณ์หรือเครือข่ายอื่น</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question">
+              <span>I'm not receiving email notifications</span>
+              <i data-feather="chevron-down" class="faq-icon"></i>
+            </button>
+            <div class="faq-answer">
+              <p>Check your spam/junk folder first. Verify your email address in your profile settings and ensure notification preferences are enabled. Add our domain to your email whitelist.</p>
+              <p class="th">ตรวจสอบโฟลเดอร์สแปม/ขยะก่อน ยืนยันที่อยู่อีเมลในการตั้งค่าโปรไฟล์และตรวจสอบว่าการแจ้งเตือนเปิดอยู่ เพิ่มโดเมนของเราในรายชื่อที่อนุญาตของอีเมล</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- No Results Message (Hidden by default) -->
+      <div class="no-results" id="noResults" style="display: none;">
+        <i data-feather="search" class="no-results-icon"></i>
+        <h3>No results found</h3>
+        <p>We couldn't find any questions matching your search. Try different keywords or browse by category.</p>
+        <p>Still need help? <a href="contact.html" style="color: #0b3d91; font-weight: 600;">Contact our support team</a></p>
+      </div>
+      
+    </div>
+  </div>
+
+  <!-- Quick Actions -->
+  <section class="quick-actions animate-fadeInUp animate-delay-2">
+    <div class="action-card">
+      <div class="action-icon">
+        <i data-feather="upload-cloud"></i>
+      </div>
+      <h3>Start Uploading</h3>
+      <p>Share your notes with the community and help fellow students succeed in their studies.</p>
+      <a href="upload.html" class="action-btn">
+        <i data-feather="arrow-right"></i>
+        Upload Now
+      </a>
+    </div>
+
+    <div class="action-card">
+      <div class="action-icon">
+        <i data-feather="search"></i>
+      </div>
+      <h3>Browse Notes</h3>
+      <p>Discover thousands of study materials organized by subject, difficulty, and rating.</p>
+      <a href="browse-note.html" class="action-btn">
+        <i data-feather="arrow-right"></i>
+        Browse Now
+      </a>
+    </div>
+
+    <div class="action-card">
+      <div class="action-icon">
+        <i data-feather="message-circle"></i>
+      </div>
+      <h3>Need More Help?</h3>
+      <p>Can't find your answer? Our support team is ready to assist you with any questions.</p>
+      <a href="contact.html" class="action-btn">
+        <i data-feather="arrow-right"></i>
+        Contact Us
+      </a>
+    </div>
+  </section>
+
+  <!-- No Results Message (Hidden by default) -->
+  <div class="no-results" id="noResults" style="display: none;">
+    <i data-feather="search" class="no-results-icon"></i>
+    <h3>No results found</h3>
+    <p>We couldn't find any questions matching your search. Try different keywords or browse by category.</p>
+    <p>Still need help? <a href="contact.html" style="color: #0b3d91; font-weight: 600;">Contact our support team</a></p>
+  </div>
+</main>
+
+<!-- footer -->
+<footer class="site-footer">
+  <div class="footer-top">
+    <div class="footer-logo">
+      <h2>DME Study Hub</h2>
+      <p>A note-sharing platform by Digital Media Engineering students – helping connect learning experiences across generations with quality resources.</p>
+    </div>
+
+    <div class="footer-right">
+      <div class="footer-links">
+        <h3>Main Menu</h3>
+        <ul>
+          <li><a href="home.html">Home</a></li>
+          <li><a href="find-note.html">Find Notes</a></li>
+          <li><a href="top-user.html">Top Contributors</a></li>
+          <li><a href="upload.html">Upload</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-help">
+        <h3>Help & Support</h3>
+        <ul>
+          <li><a href="faqs.html">FAQs</a></li>
+          <li><a href="#">User Guide</a></li>
+          <li><a href="contact.html">Contact Team</a></li>
+          <li><a href="#">Report an Issue</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-contact">
+        <h3>Connect With Us</h3>
+        <p>Email: dme.studyhub@gmail.com</p>
+        <div class="social-icons">
+          <a href="#"><i data-feather="facebook"></i></a>
+          <a href="#"><i data-feather="instagram"></i></a>
+          <a href="#"><i data-feather="mail"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>&copy; <span id="year"></span> DME Study Hub. All rights reserved.</p>
+  </div>
+</footer>
+
+<script src="https://unpkg.com/feather-icons"></script>
+<script>
+  feather.replace();
+
+  // Intersection Observer for scroll animations
+  const observerOptions = {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.style.animationPlayState = 'running';
+        observer.unobserve(entry.target);
+      }
+    });
+  }, observerOptions);
+
+  // Initialize animations on page load
+  document.addEventListener('DOMContentLoaded', function() {
+    const animatedElements = document.querySelectorAll('[class*="animate-"]');
+    
+    animatedElements.forEach(element => {
+      element.style.animationPlayState = 'paused';
+      element.style.animationFillMode = 'both';
+      observer.observe(element);
+    });
+
+    // Set current year in footer
+    document.getElementById('year').textContent = new Date().getFullYear();
+  });
+
+  // FAQ Toggle Functionality
+  document.querySelectorAll('.faq-question').forEach(question => {
+    question.addEventListener('click', () => {
+      const faqItem = question.closest('.faq-item');
+      const isActive = faqItem.classList.contains('active');
+      
+      // Close all other FAQ items
+      document.querySelectorAll('.faq-item').forEach(item => {
+        if (item !== faqItem) {
+          item.classList.remove('active');
+        }
+      });
+      
+      // Toggle current item
+      faqItem.classList.toggle('active');
+    });
+  });
+
+  // Category Navigation
+  document.querySelectorAll('.nav-item').forEach(navItem => {
+    navItem.addEventListener('click', (e) => {
+      e.preventDefault();
+      
+      // Update active nav item
+      document.querySelectorAll('.nav-item').forEach(item => {
+        item.classList.remove('active');
+      });
+      navItem.classList.add('active');
+      
+      // Smooth scroll to category
+      const targetId = navItem.getAttribute('href');
+      const targetElement = document.querySelector(targetId);
+      if (targetElement) {
+        targetElement.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start'
+        });
+      }
+    });
+  });
+
+  // Search Functionality
+  const searchInput = document.getElementById('searchInput');
+  const faqItems = document.querySelectorAll('.faq-item');
+  const categorySections = document.querySelectorAll('.category-section');
+  const noResults = document.getElementById('noResults');
+
+  searchInput.addEventListener('input', (e) => {
+    const searchTerm = e.target.value.toLowerCase().trim();
+    let hasResults = false;
+    
+    if (searchTerm === '') {
+      // Show all items and sections
+      faqItems.forEach(item => {
+        item.style.display = 'block';
+        item.style.background = '';
+      });
+      categorySections.forEach(section => {
+        section.style.display = 'block';
+      });
+      noResults.style.display = 'none';
+      return;
+    }
+    
+    categorySections.forEach(section => {
+      let sectionHasResults = false;
+      const itemsInSection = section.querySelectorAll('.faq-item');
+      
+      itemsInSection.forEach(item => {
+        const questionText = item.querySelector('.faq-question span').textContent.toLowerCase();
+        const answerText = item.querySelector('.faq-answer').textContent.toLowerCase();
+        
+        if (questionText.includes(searchTerm) || answerText.includes(searchTerm)) {
+          item.style.display = 'block';
+          item.style.background = 'linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%)';
+          sectionHasResults = true;
+          hasResults = true;
+        } else {
+          item.style.display = 'none';
+          item.style.background = '';
+        }
+      });
+      
+      section.style.display = sectionHasResults ? 'block' : 'none';
+    });
+    
+    noResults.style.display = hasResults ? 'none' : 'block';
+  });
+
+  // Keyboard navigation for FAQ items
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter' || e.key === ' ') {
+      if (e.target.classList.contains('faq-question')) {
+        e.preventDefault();
+        e.target.click();
+      }
+    }
+  });
+
+  // Smooth scroll for anchor links
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      e.preventDefault();
+      const target = document.querySelector(this.getAttribute('href'));
+      if (target) {
+        target.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start'
+        });
+      }
+    });
+  });
+
+  // Improved scroll spy for active nav updates
+  let isScrolling = false;
+
+  function updateActiveNav() {
+    if (isScrolling) return;
+    
+    const sections = document.querySelectorAll('.category-section');
+    const navItems = document.querySelectorAll('.nav-item');
+    
+    let currentSection = '';
+    let closestSection = null;
+    let closestDistance = Infinity;
+    
+    // หาดูว่า section ไหนอยู่ใกล้กับจุดกลางของ viewport มากที่สุด
+    const viewportCenter = window.scrollY + window.innerHeight / 2;
+    
+    sections.forEach(section => {
+      const rect = section.getBoundingClientRect();
+      const sectionTop = window.scrollY + rect.top;
+      const sectionCenter = sectionTop + rect.height / 2;
+      const distance = Math.abs(viewportCenter - sectionCenter);
+      
+      // ถ้า section นี้อยู่ใน viewport และใกล้กับจุดกลางมากที่สุด
+      if (rect.top <= window.innerHeight / 2 && rect.bottom >= window.innerHeight / 2) {
+        if (distance < closestDistance) {
+          closestDistance = distance;
+          closestSection = section.id;
+        }
+      }
+    });
+    
+    // ถ้าไม่มี section ไหนอยู่ใน viewport center ให้ใช้วิธีเดิม
+    if (!closestSection) {
+      sections.forEach(section => {
+        const rect = section.getBoundingClientRect();
+        if (rect.top <= 150 && rect.bottom > 150) {
+          closestSection = section.id;
+        }
+      });
+    }
+    
+    // Update active nav item
+    navItems.forEach(item => {
+      item.classList.remove('active');
+      const href = item.getAttribute('href');
+      if (href === `#${closestSection}`) {
+        item.classList.add('active');
+      }
+    });
+  }
+
+  // Throttle scroll events for better performance
+  let scrollTimeout;
+  window.addEventListener('scroll', () => {
+    clearTimeout(scrollTimeout);
+    scrollTimeout = setTimeout(() => {
+      if (!isScrolling) {
+        updateActiveNav();
+      }
+    }, 50);
+  });
+
+  // Handle programmatic scrolling (from nav clicks)
+  document.querySelectorAll('.nav-item').forEach(navItem => {
+    navItem.addEventListener('click', (e) => {
+      e.preventDefault();
+      isScrolling = true;
+      
+      // Update active nav item immediately
+      document.querySelectorAll('.nav-item').forEach(item => {
+        item.classList.remove('active');
+      });
+      navItem.classList.add('active');
+      
+      // Smooth scroll to category
+      const targetId = navItem.getAttribute('href');
+      const targetElement = document.querySelector(targetId);
+      if (targetElement) {
+        targetElement.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start'
+        });
+        
+        // Reset scrolling flag after animation completes
+        setTimeout(() => {
+          isScrolling = false;
+          updateActiveNav();
+        }, 1000);
+      }
+    });
+  });
+
+  // Initial active nav setup
+  document.addEventListener('DOMContentLoaded', () => {
+    setTimeout(updateActiveNav, 100);
+  });
+</script>
+</body>
+</html>

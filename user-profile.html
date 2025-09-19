@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <title>Profile • DME Study Hub</title>
+    <link rel="stylesheet" href="nav-footer.css">
+    <link rel="stylesheet" href="user-profile.css">
+</head>
+<body>
+<!-- ********************************* Nav-bar section ********************************* -->
+<nav class="navbar-section" id="navbar">
+  <div class="nav-left">
+    <h2 class="web-name"><a href="home.html" style="text-decoration: none; color: white;">DME Study Hub</a></h2>
+  </div>
+
+  <div class="nav-middle">
+      <a class="home-btn" href="home.html">Home</a>
+      <div class="category-menu">
+          <label class="category-btn">Categories ▾</label>
+          <div class="category-dropdown">
+              <a href="browse-note.html">Basic Subjects</a>
+              <a href="browse-note.html">Assignments / Homework</a>
+              <a href="browse-note.html">Exam Summaries</a>
+              <a href="browse-note.html">Resume / Cv</a>
+              <a href="browse-note.html">Portfolio</a>
+          </div>
+      </div>
+      <a class="browse-btn" href="browse-note.html">Browse Notes</a>
+      <a class="upload-btn" href="upload.html">Upload</a>
+      <div class="category-menu">
+          <label class="about-btn">About ▾</label>
+          <div class="category-dropdown">
+              <a href="about.html">About us</a>
+              <a href="contact.html">Contact us</a>
+              <a href="faq.html">FAQs</a>
+              <a href="#">Privacy Policy</a>
+              <a href="#">Terms of Service</a>
+          </div>
+      </div>
+      <div class="search-bar">
+          <input type="text" placeholder="Search: Title, Tags, Author, Description">
+          <a href="browse-note.html" style="margin-left: 0.5rem;"><i class="fas fa-search"></i></a>
+      </div>
+  </div>
+
+  <div class="nav-right">
+      <!------------------------------------------------ ยังไม่ Login ------------------------------------------------>
+      <a class="login-btn" href="login.html">Login</a>
+      <a class="register-btn" href="register.html">Register</a>
+
+      <!------------------------------------------------ Login แล้ว ------------------------------------------------>
+      <!-- <div class="notification-menu">
+          <a class="notification-btn" href="#"><i class="fas fa-bell"></i><span class="dot"></span></a>
+          <div class="notification-dropdown">
+              <h4>🔔 Notification</h4>
+              <div class="notification-item">
+                  <p><strong>พี่น้ำ</strong> ติดตามคุณแล้ว</p>
+                  <span>5 นาทีที่แล้ว</span>
+              </div>
+              <div class="notification-item">
+                  <p><strong>พี่เต้</strong> อัปโหลดโน้ตใหม่: “แนวข้อสอบ UX”</p>
+                  <span>20 นาทีที่แล้ว</span>
+              </div>
+              <div class="notification-item">
+                  <p><strong>โน้ตของคุณ</strong> ได้รับ 5 ดาวจาก <strong>พี่ใบเตย</strong></p>
+                  <span>1 ชม.ที่แล้ว</span>
+              </div>
+              <div class="notification-item">
+                  <p><strong>ระบบ</strong>: โน้ตของคุณได้รับการอนุมัติแล้ว ✅</p>
+                  <span>เมื่อวานนี้</span>
+              </div>
+          </div>
+      </div>
+      
+      <div class="profile-menu">
+          <a class="profile-btn" href="#"><i class="fas fa-user-circle"></i></a>
+          <div class="profile-dropdown">
+              <a href="my-profile.html">My profile</a>
+              <a href="#">Setting</a>
+              <a class="logout-btn" href="#">Log out</a>
+          </div>
+      </div>
+  </div> -->
+</nav>
+
+<!-- ********************************* Main section ********************************* -->
+<main>
+    <nav class="breadcrumbs fade-in">
+        <a href="home.html">Home</a> &gt;
+        <a href="browse-note.html">Browse note</a> &gt;
+        <a href="note.html">Note</a> &gt;
+        <span>User Profile</span>
+    </nav>
+
+    <div class="profile-container">
+        <!-- Left Column - Profile Info -->
+        <div class="profile-info">
+            <!-- Profile Card -->
+            <div class="profile-card slide-in-left delay-1">
+                <div class="profile-header">
+                    <div class="avatar-section">
+                        <img src="https://i.pravatar.cc/200?img=12" alt="Profile Avatar" class="profile-avatar" id="profileAvatar">
+                    </div>
+                    <div class="profile-name" id="profileName">Khunakon Saengtho</div>
+                    <div class="profile-role" id="profileRole">Year 4 | DME Student</div>
+                    <div class="profile-stats">
+                        <div class="stat-item">
+                            <div class="stat-number">156</div>
+                            <div class="stat-label">Followers</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">24</div>
+                            <div class="stat-label">Uploads</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">1.2k</div>
+                            <div class="stat-label">Downloads</div>
+                        </div>
+                    </div>
+                    <div class="profile-actions">
+                        <button class="btn-follow-profile" onclick="followUser()">
+                            <i data-feather="user-plus"></i> Follow
+                        </button>
+                        <button class="btn-share-profile" onclick="shareProfile()">
+                            <i data-feather="share-2"></i> Share
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Profile Details -->
+            <div class="profile-details slide-in-left delay-2">
+                <div class="detail-item">
+                    <i class="fas fa-user"></i>
+                    <div class="detail-content">
+                        <div class="detail-label">Bio</div>
+                        <div class="detail-value" id="profileBio">Passionate DME student with a focus on digital signal processing and machine learning. Love sharing knowledge and helping fellow students succeed in their academic journey.</div>
+                    </div>
+                </div>
+
+                <div class="detail-item">
+                    <i class="fas fa-graduation-cap"></i>
+                    <div class="detail-content">
+                        <div class="detail-label">Academic Year</div>
+                        <div class="detail-value" id="profileYear">Year 4</div>
+                    </div>
+                </div>
+
+                <div class="detail-item">
+                    <i class="fas fa-envelope"></i>
+                    <div class="detail-content">
+                        <div class="detail-label">Email</div>
+                        <div class="detail-value" id="profileEmail">khunakon.s@example.com</div>
+                    </div>
+                </div>
+
+                <div class="detail-item">
+                    <i data-feather="globe"></i>
+                    <div class="detail-content">
+                        <div class="detail-label">Social Media</div>
+                        <div class="social-links" id="socialLinks">
+                            <a href="#" class="social-link">Facebook</a>
+                            <a href="#" class="social-link">Instagram</a>
+                            <a href="#" class="social-link">LinkedIn</a>
+                            <a href="#" class="social-link">GitHub</a>
+                            <a href="#" class="social-link">Twitter</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right Column - Upload History -->
+        <div class="upload-history slide-in-right delay-1">
+            <!-- Category Tabs -->
+            <div class="category-tabs">
+                <button class="tab active" onclick="switchTab('uploads')">User's Uploads</button>
+                <button class="tab" onclick="switchTab('favorites')">User's Favorite Notes</button>
+            </div>
+
+            <!-- Uploads Content -->
+            <div id="uploadsContent" class="tab-content active">
+                <h1 class="history-title fade-in-up delay-2" id="currentTabTitle">User's Uploads</h1>
+                <label class="Total-cards fade-in-up delay-3">Total Number of Uploads: 24</label>
+                <div class="history-header">
+                    <div class="filter-controls fade-in-up delay-3">
+                        <div class="left-controls">
+                        <select class="filter-select" id="subjectFilter">
+                            <option value="">All Subjects</option>
+                            <option value="dsp">Digital Signal Processing</option>
+                            <option value="graphics">Computer Graphics</option>
+                            <option value="math">Discrete Mathematics</option>
+                            <option value="algorithms">Algorithms</option>
+                        </select>
+                        <select class="filter-select" id="sortFilter">
+                            <option value="newest">Newest First</option>
+                            <option value="oldest">Oldest First</option>
+                            <option value="popular">Most Popular</option>
+                            <option value="rating">Highest Rated</option>
+                        </select>
+                        </div>
+                        <div class="search-container">
+                            <i data-feather="search"></i>
+                            <input type="text" placeholder="Search notes..." class="search-box" id="searchBox">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Cards section -->
+                <div class="cards" id="uploadCards">
+                    <!-- Cards will be dynamically loaded here -->
+                </div>
+
+                <!-- Pagination -->
+                <div class="pagination fade-in-up delay-5">
+                    <button id="prevBtn" onclick="changePage(-1)" disabled>« Previous</button>
+                    <button class="active">1</button>
+                    <button onclick="goToPage(2)">2</button>
+                    <button onclick="goToPage(3)">3</button>
+                    <button id="nextBtn" onclick="changePage(1)">Next »</button>
+                </div>
+            </div>
+
+            <!-- Statistics Content -->
+            <div id="statisticsContent" class="statistics-content">
+                <h1 class="history-title">Statistics & Analytics</h1>
+                
+                <div class="stats-overview">
+                    <div class="overview-card blue scale-in delay-1">
+                        <div class="overview-number">24</div>
+                        <div class="overview-label">Total Uploads</div>
+                    </div>
+                    <div class="overview-card green scale-in delay-2">
+                        <div class="overview-number">3.2k</div>
+                        <div class="overview-label">Total Views</div>
+                    </div>
+                    <div class="overview-card yellow scale-in delay-3">
+                        <div class="overview-number">312</div>
+                        <div class="overview-label">Total Downloads</div>
+                    </div>
+                    <div class="overview-card pink scale-in delay-4">
+                        <div class="overview-number">156</div>
+                        <div class="overview-label">Followers</div>
+                    </div>
+                </div>
+
+                <div class="activity-section fade-in-up delay-5">
+                    <div class="activity-header">Recent Activity</div>
+                    <div class="activity-list">
+                        <div class="activity-item">
+                            <div class="activity-icon blue">
+                                <i data-feather="user-plus"></i>
+                            </div>
+                            <div class="activity-details">
+                                <div class="activity-text">New follower: Sarah joined</div>
+                                <div class="activity-time">1 day ago</div>
+                            </div>
+                        </div>
+                        <div class="activity-item">
+                            <div class="activity-icon yellow">
+                                <i data-feather="star"></i>
+                            </div>
+                            <div class="activity-details">
+                                <div class="activity-text">Computer Graphics slides received 4.5 stars rating</div>
+                                <div class="activity-time">2 days ago</div>
+                            </div>
+                        </div>
+                        <div class="activity-item">
+                            <div class="activity-icon purple">
+                                <i data-feather="edit"></i>
+                            </div>
+                            <div class="activity-details">
+                                <div class="activity-text">Discrete Mathematics notes updated</div>
+                                <div class="activity-time">3 days ago</div>
+                            </div>
+                        </div>
+                        <div class="activity-item">
+                            <div class="activity-icon green">
+                                <i data-feather="message-circle"></i>
+                            </div>
+                            <div class="activity-details">
+                                <div class="activity-text">Received 5 new comments on uploaded files</div>
+                                <div class="activity-time">4 days ago</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</main>
+
+<!-- ********************************* Footer section ********************************** -->
+<footer class="site-footer">
+  <div class="footer-top">
+    <!-- Logo & About -->
+    <div class="footer-logo">
+      <h2>DME Study Hub</h2>
+      <p>A note-sharing platform by Digital Media Engineering students – helping connect learning experiences across generations with quality resources.</p>
+    </div>
+
+    <div class="footer-right">
+    <!-- Main Menu -->
+    <div class="footer-links">
+      <h3>Main Menu</h3>
+      <ul>
+        <li><a href="home.html">Home</a></li>
+        <li><a href="find-note.html">Find Notes</a></li>
+        <li><a href="top-user.html">Top Contributors</a></li>
+        <li><a href="upload.html">Upload</a></li>
+      </ul>
+    </div>
+
+    <!-- Help -->
+    <div class="footer-help">
+      <h3>Help & Support</h3>
+      <ul>
+        <li><a href="#">FAQs</a></li>
+        <li><a href="#">User Guide</a></li>
+        <li><a href="#">Contact Team</a></li>
+        <li><a href="#">Report an Issue</a></li>
+      </ul>
+    </div>
+
+    <!-- Contact -->
+    <div class="footer-contact">
+      <h3>Connect With Us</h3>
+      <p>Email: dme.studyhub@gmail.com</p>
+      <div class="social-icons">
+        <a href="#"><i data-feather="facebook"></i></a>
+        <a href="#"><i data-feather="instagram"></i></a>
+        <a href="#"><i data-feather="mail"></i></a>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <div class="footer-bottom">
+    <p>&copy; <span id="year"></span> DME Study Hub. All rights reserved.</p>
+  </div>
+</footer>
+
+<script src="https://unpkg.com/feather-icons"></script>
+<script src="user-profile.js"></script>
+</body>
+</html>

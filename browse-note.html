@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Browse Notes • DME Study Hub</title>
+    <link rel="stylesheet" href="nav-footer.css">
+    <link rel="stylesheet" href="browse-note.css">
+</head>
+<body>
+<!-- ********************************* Nav-bar section ********************************* -->
+<nav class="navbar-section" id="navbar">
+  <div class="nav-left">
+    <h2 class="web-name"><a href="home.html" style="text-decoration: none; color: white;">DME Study Hub</a></h2>
+  </div>
+
+  <div class="nav-middle">
+      <a class="home-btn" href="home.html">Home</a>
+      <div class="category-menu">
+          <label class="category-btn">Categories ▾</label>
+          <div class="category-dropdown">
+              <a href="browse-note.html">Basic Subjects</a>
+              <a href="browse-note.html">Assignments / Homework</a>
+              <a href="browse-note.html">Exam Summaries</a>
+              <a href="browse-note.html">Resume / Cv</a>
+              <a href="browse-note.html">Portfolio</a>
+          </div>
+      </div>
+      <a class="browse-btn" href="browse-note.html">Browse Notes</a>
+      <a class="upload-btn" href="upload.html">Upload</a>
+      <div class="category-menu">
+          <label class="about-btn">About ▾</label>
+          <div class="category-dropdown">
+              <a href="about.html">About us</a>
+              <a href="contact.html">Contact us</a>
+              <a href="faq.html">FAQs</a>
+              <a href="#">Privacy Policy</a>
+              <a href="#">Terms of Service</a>
+          </div>
+      </div>
+      <div class="search-bar">
+          <input type="text" placeholder="Search: Title, Tags, Author, Description">
+          <a href="browse-note.html" style="margin-left: 0.5rem;"><i class="fas fa-search"></i></a>
+      </div>
+  </div>
+
+  <div class="nav-right">
+      <!------------------------------------------------ ยังไม่ Login ------------------------------------------------>
+      <a class="login-btn" href="login.html">Login</a>
+      <a class="register-btn" href="register.html">Register</a>
+
+      <!------------------------------------------------ Login แล้ว ------------------------------------------------>
+      <!-- <div class="notification-menu">
+          <a class="notification-btn" href="#"><i class="fas fa-bell"></i><span class="dot"></span></a>
+          <div class="notification-dropdown">
+              <h4>🔔 Notification</h4>
+              <div class="notification-item">
+                  <p><strong>พี่น้ำ</strong> ติดตามคุณแล้ว</p>
+                  <span>5 นาทีที่แล้ว</span>
+              </div>
+              <div class="notification-item">
+                  <p><strong>พี่เต้</strong> อัปโหลดโน้ตใหม่: “แนวข้อสอบ UX”</p>
+                  <span>20 นาทีที่แล้ว</span>
+              </div>
+              <div class="notification-item">
+                  <p><strong>โน้ตของคุณ</strong> ได้รับ 5 ดาวจาก <strong>พี่ใบเตย</strong></p>
+                  <span>1 ชม.ที่แล้ว</span>
+              </div>
+              <div class="notification-item">
+                  <p><strong>ระบบ</strong>: โน้ตของคุณได้รับการอนุมัติแล้ว ✅</p>
+                  <span>เมื่อวานนี้</span>
+              </div>
+          </div>
+      </div>
+      
+      <div class="profile-menu">
+          <a class="profile-btn" href="#"><i class="fas fa-user-circle"></i></a>
+          <div class="profile-dropdown">
+              <a href="my-profile.html">My profile</a>
+              <a href="#">Setting</a>
+              <a class="logout-btn" href="#">Log out</a>
+          </div>
+      </div>
+  </div> -->
+</nav>
+
+<!-- ********************************* Main section ********************************* -->
+<main>
+  <nav class="breadcrumbs">
+      <a href="home.html">Home</a> &gt;
+      <span>Browse Notes</span>
+  </nav>
+
+    <!-- Intro Section -->
+    <div class="intro-section animate-fadeInUp animate-delay-1">
+        <h1 id="page-title">Browse Notes</h1>
+        <p>
+            Welcome to the DME Study Hub note library. Browse lecture notes, homework,
+            exam summaries, and resume/portfolio examples shared by seniors and classmates.
+            Use the filters, sorting, and display options to quickly find high-quality,
+            course-specific resources that will help you study and prepare for exams and projects.
+        </p>
+    </div>
+
+    <!-- Topbar section -->
+    <div class="topbar-section animate-fadeInUp animate-delay-2">
+        <div class="stats">
+          <span class="stat"><i data-feather="book"></i> 124 Notes</span>
+          <span class="stat"><i data-feather="users"></i> 56 Contributors</span>
+          <span class="stat"><i data-feather="download"></i> 340 Downloads</span>
+        </div>
+        <p class="tagline">Helping juniors succeed, powered by seniors' knowledge ✨</p>
+    </div>
+
+    <!-- Filters section -->
+    <div class="controls animate-fadeInLeft animate-delay-3">
+      <div class="sort">
+        <select>
+          <option>Latest update</option>
+          <option>Most popular</option>
+          <option>Alphabetical (A-Z)</option>
+        </select>
+      </div>
+
+      <div class="filters">
+          <label class="chip"><input type="checkbox" checked>All</label>
+          <label class="chip"><input type="checkbox">Base Subjects</label>
+          <label class="chip"><input type="checkbox">Assignments</label>
+          <label class="chip"><input type="checkbox">Exam Summaries</label>
+          <label class="chip"><input type="checkbox">Resume/CV</label>
+          <label class="chip"><input type="checkbox">Portfolio</label>
+      </div>
+      
+      <div class="card-views">
+          <select>
+            <option value="grid">Grid view</option>
+            <option value="list">List view</option>
+          </select>
+      </div>
+    </div>
+
+    <!-- Card section -->
+    <div class="cards">
+      <!-- Card 1 -->
+      <div class="card animate-fadeInUp animate-delay-3">
+        <header>
+          <div class="title-wrap">
+            <div class="title"><a href="note.html">Digital Signal Processing</a></div>
+            <div class="meta">
+              <span class="author">Bow</span>
+              <span>| Updated 2 days ago</span>
+            </div>
+          </div>
+
+          <button class="fav-btn">★</button>
+        </header>
+
+        <p class="desc">
+          Overview of FIR and IIR filter design, windowed methods, frequency sampling techniques,
+          step-by-step computations, pros/cons, and practical tips for the final exam.
+        </p>
+
+        <div class="foot">
+          <div class="tags">
+            <span class="badge">PDF</span>
+            <span class="badge">Year 3</span>
+            <span class="badge">Exam Prep</span>
+          </div>
+          <span class="meta">1.2k views | 12 pages</span>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="card animate-fadeInUp animate-delay-4">
+        <header>
+          <div class="title-wrap">
+            <div class="title"><a href="#">
+              Computer Graphics Shader Basics and practical snippets for student projects and demos
+            </a></div>
+            <div class="meta">
+              <span class="author" title="x">Mint</span>
+              <span>| Updated 5 days ago</span>
+            </div>
+          </div>
+
+          <button class="fav-btn">★</button>
+        </header>
+        <p class="desc">
+          Vertex and fragment shader fundamentals, GLSL snippets, pipeline overview, and simple
+          lighting techniques useful for coursework and project demonstrations.
+        </p>
+        <div class="foot">
+          <div class="tags">
+            <span class="badge">Slides</span>
+            <span class="badge">Code</span>
+          </div>
+          <span class="meta">845 views | 18 pages</span>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="card animate-fadeInUp animate-delay-5">
+        <header>
+          <div class="title-wrap">
+            <div class="title"><a href="#">
+              Discrete Mathematics concise cheat-sheet with practice problems and quick references
+            </a></div>
+            <div class="meta">
+              <span class="author" title="Joe">Joe</span>
+              <span>| Updated 22 Aug 2568</span>
+            </div>
+          </div>
+
+          <button class="fav-btn">★</button>
+        </header>
+
+        <p class="desc">
+          Logic, sets, relations, graph basics, Venn diagrams and sample exam problems with
+          worked solutions for fast revision.
+        </p>
+
+        <div class="foot">
+          <div class="tags">
+            <span class="badge">PDF</span>
+            <span class="badge">Quick summary</span>
+          </div>
+          <span class="meta">2.4k views | 9 pages</span>
+        </div>
+      </div>
+
+      <!-- Card 1 -->
+      <div class="card animate-fadeInUp animate-delay-1">
+        <header>
+          <div class="title-wrap">
+            <div class="title"><a href="note.html">Digital Signal Processing</a></div>
+            <div class="meta">
+              <span class="author">Bow</span>
+              <span>| Updated 2 days ago</span>
+            </div>
+          </div>
+
+          <button class="fav-btn">★</button>
+        </header>
+
+        <p class="desc">
+          Overview of FIR and IIR filter design, windowed methods, frequency sampling techniques,
+          step-by-step computations, pros/cons, and practical tips for the final exam.
+        </p>
+
+        <div class="foot">
+          <div class="tags">
+            <span class="badge">PDF</span>
+            <span class="badge">Year 3</span>
+            <span class="badge">Exam Prep</span>
+          </div>
+          <span class="meta">1.2k views | 12 pages</span>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="card animate-fadeInUp animate-delay-2">
+        <header>
+          <div class="title-wrap">
+            <div class="title"><a href="#">
+              Computer Graphics Shader Basics and practical snippets for student projects and demos
+            </a></div>
+            <div class="meta">
+              <span class="author" title="x">Mint</span>
+              <span>| Updated 5 days ago</span>
+            </div>
+          </div>
+
+          <button class="fav-btn">★</button>
+        </header>
+        <p class="desc">
+          Vertex and fragment shader fundamentals, GLSL snippets, pipeline overview, and simple
+          lighting techniques useful for coursework and project demonstrations.
+        </p>
+        <div class="foot">
+          <div class="tags">
+            <span class="badge">Slides</span>
+            <span class="badge">Code</span>
+          </div>
+          <span class="meta">845 views | 18 pages</span>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="card animate-fadeInUp animate-delay-3">
+        <header>
+          <div class="title-wrap">
+            <div class="title"><a href="#">
+              Discrete Mathematics concise cheat-sheet with practice problems and quick references
+            </a></div>
+            <div class="meta">
+              <span class="author" title="Joe">Joe</span>
+              <span>| Updated 22 Aug 2568</span>
+            </div>
+          </div>
+
+          <button class="fav-btn">★</button>
+        </header>
+
+        <p class="desc">
+          Logic, sets, relations, graph basics, Venn diagrams and sample exam problems with
+          worked solutions for fast revision.
+        </p>
+
+        <div class="foot">
+          <div class="tags">
+            <span class="badge">PDF</span>
+            <span class="badge">Quick summary</span>
+          </div>
+          <span class="meta">2.4k views | 9 pages</span>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Pagination (static for now) -->
+    <nav class="pager animate-fadeInUp animate-delay-1">
+      <a href="#" class="active">1</a>
+      <a href="#">2</a>
+      <a href="#">3</a>
+      <a href="#">›</a>
+    </nav>
+</main>
+
+<!-- ********************************* Footer section ********************************** -->
+<footer class="site-footer">
+  <div class="footer-top">
+    <!-- Logo & About -->
+    <div class="footer-logo">
+      <h2>DME Study Hub</h2>
+      <p>A note-sharing platform by Digital Media Engineering students – helping connect learning experiences across generations with quality resources.</p>
+    </div>
+
+    <div class="footer-right">
+    <!-- Main Menu -->
+    <div class="footer-links">
+      <h3>Main Menu</h3>
+      <ul>
+        <li><a href="home.html">Home</a></li>
+        <li><a href="find-note.html">Find Notes</a></li>
+        <li><a href="top-user.html">Top Contributors</a></li>
+        <li><a href="upload.html">Upload</a></li>
+      </ul>
+    </div>
+
+    <!-- Help -->
+    <div class="footer-help">
+      <h3>Help & Support</h3>
+      <ul>
+        <li><a href="#">FAQs</a></li>
+        <li><a href="#">User Guide</a></li>
+        <li><a href="#">Contact Team</a></li>
+        <li><a href="#">Report an Issue</a></li>
+      </ul>
+    </div>
+
+    <!-- Contact -->
+    <div class="footer-contact">
+      <h3>Connect With Us</h3>
+      <p>Email: dme.studyhub@gmail.com</p>
+      <div class="social-icons">
+        <a href="#"><i data-feather="facebook"></i></a>
+        <a href="#"><i data-feather="instagram"></i></a>
+        <a href="#"><i data-feather="mail"></i></a>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <div class="footer-bottom">
+    <p>&copy; <span id="year"></span> DME Study Hub. All rights reserved.</p>
+  </div>
+</footer>
+
+<script src="https://unpkg.com/feather-icons"></script>
+<script>
+  feather.replace();
+
+  // Intersection Observer for scroll animations
+  const observerOptions = {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.style.animationPlayState = 'running';
+        observer.unobserve(entry.target);
+      }
+    });
+  }, observerOptions);
+
+  // Initialize animations on page load
+  document.addEventListener('DOMContentLoaded', function() {
+    const animatedElements = document.querySelectorAll('[class*="animate-"]');
+    
+    animatedElements.forEach(element => {
+      element.style.animationPlayState = 'paused';
+      element.style.animationFillMode = 'both';
+      observer.observe(element);
+    });
+
+    // Original card title logic
+    const cards = document.querySelectorAll(".card");
+    cards.forEach(card => {
+      const titleEl = card.querySelector(".title");
+      const descEl = card.querySelector(".desc");
+
+      if (titleEl && descEl) {
+        const lineHeight = parseFloat(getComputedStyle(titleEl).lineHeight);
+        const lines = Math.round(titleEl.scrollHeight / lineHeight);
+
+        if (lines > 1) {
+          descEl.classList.add("clamp-4");
+        } else {
+          descEl.classList.add("clamp-5");
+        }
+      }
+    });
+  });
+</script>
+</body>
+</html>

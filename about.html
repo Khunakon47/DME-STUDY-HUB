@@ -1,0 +1,726 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About Us | DME Study Hub</title>
+  <link rel="stylesheet" href="nav-footer.css" />
+  <style>
+    main {
+      width: 1000px;
+      margin: 4rem auto 0;
+      padding: 30px;
+      background: #ffffff;
+      color: #1a1a1a;
+      line-height: 1.55;
+    }
+
+    /* Animations */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeInLeft {
+      from {
+        opacity: 0;
+        transform: translateX(-30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    @keyframes fadeInRight {
+      from {
+        opacity: 0;
+        transform: translateX(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    @keyframes scaleIn {
+      from {
+        opacity: 0;
+        transform: scale(0.9);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    .animate-fadeInUp {
+      animation: fadeInUp 0.8s ease-out forwards;
+    }
+
+    .animate-fadeInLeft {
+      animation: fadeInLeft 0.8s ease-out forwards;
+    }
+
+    .animate-fadeInRight {
+      animation: fadeInRight 0.8s ease-out forwards;
+    }
+
+    .animate-scaleIn {
+      animation: scaleIn 0.6s ease-out forwards;
+    }
+
+    .animate-delay-1 { animation-delay: 0.2s; opacity: 0; }
+    .animate-delay-2 { animation-delay: 0.4s; opacity: 0; }
+    .animate-delay-3 { animation-delay: 0.6s; opacity: 0; }
+
+    /***************************************** breadcrumbs section ******************************************/
+    .breadcrumbs {
+        font-size: 14px;
+        margin: 20px 0;
+        padding-bottom: 18px;
+        border-bottom: 2px solid transparent;
+        border-image: linear-gradient(to right, #2563eb, #60a5fa, #2563eb) 1;
+        color: #555;
+    }
+
+    .breadcrumbs a {
+        color: #0b3d91;
+        text-decoration: none;
+        margin: 0 6px;
+    }
+
+    .breadcrumbs a:hover {
+        text-decoration: underline;
+    }
+
+    .breadcrumbs span {
+        color: #333;
+        margin-left: 5px;
+        cursor: default;
+    }
+
+    /* Hero Section */
+    .about-hero {
+      text-align: center;
+      padding: 3.5rem 0 4rem;
+      background: linear-gradient(135deg, #0b3d91 0%, #1e4d8b 50%, #0b3d91 100%);
+      color: white;
+      border-radius: 16px;
+      margin-bottom: 3rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .about-hero h1 {
+      font-size: 3.2rem;
+      font-weight: 700;
+      margin-bottom: 1.2rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .about-hero p {
+      font-size: 1.2rem;
+      max-width: 680px;
+      margin: 0 auto;
+      opacity: 0.95;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* Creator Section */
+    .creator-section {
+      display: flex;
+      align-items: center;
+      gap: 3rem;
+      margin-bottom: 3rem;
+      padding: 2.5rem;
+      background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+      border-radius: 20px;
+      border: 1px solid #e1e8ed;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.06);
+    }
+
+    .creator-image {
+      flex: 0 0 200px;
+    }
+
+    .creator-image img {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid #0b3d91;
+      box-shadow: 0 8px 20px rgba(11, 61, 145, 0.2);
+    }
+
+    .creator-content {
+      flex: 1;
+    }
+
+    .creator-content h2 {
+      color: #0b3d91;
+      font-size: 1.8rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+
+    .creator-content p {
+      font-size: 1.05rem;
+      color: #4a5568;
+      margin-bottom: 1rem;
+    }
+
+    /* Mission Card */
+    .mission-card {
+      background: linear-gradient(135deg, #0b3d91 0%, #1e4d8b 100%);
+      color: white;
+      padding: 3rem;
+      border-radius: 20px;
+      margin-bottom: 3rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .mission-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"><defs><pattern id="dots" width="40" height="40" patternUnits="userSpaceOnUse"><circle cx="20" cy="20" r="2" fill="white" opacity="0.1"/></pattern></defs><rect width="200" height="200" fill="url(%23dots)"/></svg>');
+    }
+
+    .mission-content {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+    }
+
+    .mission-card h2 {
+      font-size: 2rem;
+      font-weight: 600;
+      margin-bottom: 1.5rem;
+    }
+
+    .mission-card p {
+      font-size: 1.1rem;
+      max-width: 800px;
+      margin: 0 auto 1.5rem;
+      opacity: 0.95;
+    }
+
+    /* Key Features Section */
+    .key-features-container {
+      margin: 4rem 0;
+      text-align: center;
+    }
+
+    .feature-badge {
+      display: inline-block;
+      background: linear-gradient(135deg, #0b3d91, #1e4d8b);
+      color: white;
+      padding: 0.5rem 1.5rem;
+      border-radius: 25px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      margin-bottom: 1.5rem;
+      box-shadow: 0 4px 15px rgba(11, 61, 145, 0.3);
+    }
+
+    .feature-heading {
+      color: #2d3748;
+      font-size: 2.2rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+
+    .feature-subtitle {
+      color: #4a5568;
+      font-size: 1.1rem;
+      max-width: 700px;
+      margin: 0 auto 3rem;
+    }
+
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin-bottom: 3rem;
+    }
+
+    .feature-card {
+      background: white;
+      padding: 2rem;
+      border-radius: 16px;
+      text-align: center;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+      border: 1px solid #e2e8f0;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .feature-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, #0b3d91, #1e4d8b);
+    }
+
+    .feature-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+    }
+
+    .feature-icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 60px;
+      height: 60px;
+      background: linear-gradient(135deg, #0b3d91, #1e4d8b);
+      border-radius: 50%;
+      margin-bottom: 1.5rem;
+      color: white;
+    }
+
+    .feature-icon svg {
+      width: 28px;
+      height: 28px;
+    }
+
+    .feature-card h3 {
+      color: #2d3748;
+      font-size: 1.3rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+
+    .feature-card p {
+      color: #4a5568;
+      font-size: 0.95rem;
+    }
+
+    /* Story Section */
+    .story-section {
+      display: flex;
+      align-items: center;
+      gap: 3rem;
+      margin-bottom: 3rem;
+    }
+
+    .story-image {
+      flex: 0 0 300px;
+    }
+
+    .story-image img {
+      width: 100%;
+      height: 250px;
+      border-radius: 16px;
+      object-fit: cover;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    }
+
+    .story-content {
+      flex: 1;
+    }
+
+    .story-content h2 {
+      color: #0b3d91;
+      font-size: 2rem;
+      font-weight: 600;
+      margin-bottom: 1.5rem;
+    }
+
+    .story-content p {
+      color: #4a5568;
+      font-size: 1.05rem;
+      margin-bottom: 1.5rem;
+    }
+
+    /* Vision Section */
+    .vision-section {
+      background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+      padding: 3rem;
+      border-radius: 20px;
+      text-align: center;
+      border: 1px solid #e1e8ed;
+      margin-bottom: 3rem;
+    }
+
+    .vision-section h2 {
+      color: #0b3d91;
+      font-size: 2rem;
+      font-weight: 600;
+      margin-bottom: 1.5rem;
+    }
+
+    .vision-section p {
+      color: #4a5568;
+      font-size: 1.05rem;
+      max-width: 800px;
+      margin: 0 auto 1.5rem;
+    }
+
+    /* Stats Section */
+    .stats-section {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 2rem;
+      margin-bottom: 3rem;
+    }
+
+    .stat-card {
+      text-align: center;
+      padding: 2rem;
+      background: white;
+      border-radius: 16px;
+      border: 2px solid #0b3d91;
+      transition: transform 0.3s ease;
+    }
+
+    .stat-card:hover {
+      transform: translateY(-3px);
+    }
+
+    .stat-number {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: #0b3d91;
+      margin-bottom: 0.5rem;
+    }
+
+    .stat-label {
+      color: #4a5568;
+      font-size: 1rem;
+      font-weight: 500;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 1040px) {
+      main {
+        width: 95%;
+        margin: 2rem auto 0;
+        padding: 20px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .about-hero h1 {
+        font-size: 2.5rem;
+      }
+
+      .about-hero p {
+        font-size: 1.1rem;
+      }
+
+      .creator-section, .story-section {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .creator-image, .story-image {
+        flex: none;
+      }
+
+      .feature-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .mission-card, .vision-section {
+        padding: 2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+<!-- nav-bar -->
+<nav class="navbar-section" id="navbar">
+  <div class="nav-left">
+    <h2 class="web-name"><a href="home.html" style="text-decoration: none; color: white;">DME Study Hub</a></h2>
+  </div>
+
+  <div class="nav-middle">
+      <a class="home-btn" href="home.html">Home</a>
+      <div class="category-menu">
+          <label class="category-btn">Categories ▾</label>
+          <div class="category-dropdown">
+              <a href="browse-note.html">Basic Subjects</a>
+              <a href="browse-note.html">Assignments / Homework</a>
+              <a href="browse-note.html">Exam Summaries</a>
+              <a href="browse-note.html">Resume / Cv</a>
+              <a href="browse-note.html">Portfolio</a>
+          </div>
+      </div>
+      <a class="browse-btn" href="browse-note.html">Browse Notes</a>
+      <a class="upload-btn" href="upload.html">Upload</a>
+      <div class="category-menu">
+          <label class="about-btn">About ▾</label>
+          <div class="category-dropdown">
+              <a href="about.html">About us</a>
+              <a href="contact.html">Contact us</a>
+              <a href="faq.html">FAQs</a>
+              <a href="#">Privacy Policy</a>
+              <a href="#">Terms of Service</a>
+          </div>
+      </div>
+      <div class="search-bar">
+          <input type="text" placeholder="Search: Title, Tags, Author, Description">
+          <a href="browse-note.html" style="margin-left: 0.5rem;"><i class="fas fa-search"></i></a>
+      </div>
+  </div>
+
+  <div class="nav-right">
+      <!------------------------------------------------ ยังไม่ Login ------------------------------------------------>
+      <a class="login-btn" href="login.html">Login</a>
+      <a class="register-btn" href="register.html">Register</a>
+
+      <!------------------------------------------------ Login แล้ว ------------------------------------------------>
+      <!-- <div class="notification-menu">
+          <a class="notification-btn" href="#"><i class="fas fa-bell"></i><span class="dot"></span></a>
+          <div class="notification-dropdown">
+              <h4>🔔 Notification</h4>
+              <div class="notification-item">
+                  <p><strong>พี่น้ำ</strong> ติดตามคุณแล้ว</p>
+                  <span>5 นาทีที่แล้ว</span>
+              </div>
+              <div class="notification-item">
+                  <p><strong>พี่เต้</strong> อัปโหลดโน้ตใหม่: “แนวข้อสอบ UX”</p>
+                  <span>20 นาทีที่แล้ว</span>
+              </div>
+              <div class="notification-item">
+                  <p><strong>โน้ตของคุณ</strong> ได้รับ 5 ดาวจาก <strong>พี่ใบเตย</strong></p>
+                  <span>1 ชม.ที่แล้ว</span>
+              </div>
+              <div class="notification-item">
+                  <p><strong>ระบบ</strong>: โน้ตของคุณได้รับการอนุมัติแล้ว ✅</p>
+                  <span>เมื่อวานนี้</span>
+              </div>
+          </div>
+      </div>
+      
+      <div class="profile-menu">
+          <a class="profile-btn" href="#"><i class="fas fa-user-circle"></i></a>
+          <div class="profile-dropdown">
+              <a href="my-profile.html">My profile</a>
+              <a href="#">Setting</a>
+              <a class="logout-btn" href="#">Log out</a>
+          </div>
+      </div>
+  </div> -->
+</nav>
+
+<main>
+  <nav class="breadcrumbs animate-fadeInUp">
+    <a href="home.html">Home</a> &gt;
+    <span>About Us</span>
+  </nav>
+
+  <!-- HERO -->
+  <section class="about-hero animate-fadeInUp animate-delay-1">
+    <h1>About DME Study Hub</h1>
+    <p>A solo-built platform empowering Digital Media Engineering students through collaborative learning and verified study resources</p>
+  </section>
+
+  <!-- CREATOR -->
+  <section class="creator-section animate-fadeInLeft animate-delay-2">
+    <div class="creator-image">
+      <img src="images/myself.jpg" alt="Creator working on laptop" />
+    </div>
+    <div class="creator-content">
+      <h2>Built by a Student, For Students</h2>
+      <p>As a DME student myself, I experienced firsthand the challenges of finding reliable study materials and connecting with peers. The frustration of searching through scattered resources and outdated notes inspired me to create something better.</p>
+      <p>What started as a personal project to organize my own notes has evolved into a comprehensive platform that serves the entire DME community. Every feature has been carefully designed based on real student needs and feedback.</p>
+    </div>
+  </section>
+
+  <!-- MISSION -->
+  <section class="mission-card animate-scaleIn animate-delay-2">
+    <div class="mission-content">
+      <h2>Our Mission</h2>
+      <p>To create a centralized hub where DME students can easily access high-quality study materials, share their own knowledge, and build meaningful connections with their peers across all academic levels.</p>
+      <p>We believe that when students help students, everyone succeeds. This platform transforms individual study struggles into collective academic strength.</p>
+    </div>
+  </section>
+
+  <!-- KEY FEATURES -->
+  <section class="key-features-container animate-fadeInUp">
+    <p class="feature-badge">🔹 Key Features</p>
+    <h2 class="feature-heading">Built to Empower DME Students</h2>
+    <p class="feature-subtitle">
+      Discover powerful tools and a supportive community to help you learn, share, and succeed at every step of your academic journey.
+    </p>
+
+    <div class="feature-grid">
+      <div class="feature-card animate-fadeInUp animate-delay-1">
+        <div class="feature-icon"><i data-feather="check-circle"></i></div>
+        <h3>Verified Notes</h3>
+        <p>Every file is reviewed to ensure accuracy and relevance before going public.</p>
+      </div>
+      <div class="feature-card animate-fadeInUp animate-delay-2">
+        <div class="feature-icon"><i data-feather="upload-cloud"></i></div>
+        <h3>Easy Uploads</h3>
+        <p>Upload your class notes in seconds with support for PDF and DOCX formats.</p>
+      </div>
+      <div class="feature-card animate-fadeInUp animate-delay-3">
+        <div class="feature-icon"><i data-feather="users"></i></div>
+        <h3>Peer Community</h3>
+        <p>Connect with senior students, share tips, and support each other's learning.</p>
+      </div>
+      <div class="feature-card animate-fadeInUp animate-delay-1">
+        <div class="feature-icon"><i data-feather="search"></i></div>
+        <h3>Advanced Search</h3>
+        <p>Find notes by keyword, category, or contributor — fast and easy.</p>
+      </div>
+      <div class="feature-card animate-fadeInUp animate-delay-2">
+        <div class="feature-icon"><i data-feather="star"></i></div>
+        <h3>Contributor Ratings</h3>
+        <p>Follow and rate your favorite uploaders to build a trusted study network.</p>
+      </div>
+      <div class="feature-card animate-fadeInUp animate-delay-3">
+        <div class="feature-icon"><i data-feather="lock"></i></div>
+        <h3>Ad-Free & Secure</h3>
+        <p>No ads. No tracking. 100% safe for students to focus on learning.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- STORY -->
+  <section class="story-section animate-fadeInRight">
+    <div class="story-content">
+      <h2>How It All Started</h2>
+      <p>The idea sparked during my second year when I was struggling to prepare for midterm exams. Despite being in a class of 60+ students, I felt isolated in my studies. Notes were scattered, some were incomplete, and finding reliable study materials was a constant challenge.</p>
+      <p>I realized that many students had created excellent notes and resources, but they remained locked away in personal folders. The collective knowledge of our DME community was going untapped.</p>
+      <p>After months of development, testing, and gathering feedback from fellow students, DME Study Hub was born. What began as a simple file-sharing solution has grown into a comprehensive learning ecosystem.</p>
+    </div>
+    <div class="story-image">
+      <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1000&auto=format&fit=crop" alt="Students collaborating" />
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <section class="stats-section animate-fadeInUp">
+    <div class="stat-card">
+      <div class="stat-number">500+</div>
+      <div class="stat-label">Study Resources</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-number">150+</div>
+      <div class="stat-label">Active Contributors</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-number">50+</div>
+      <div class="stat-label">Courses Covered</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-number">24/7</div>
+      <div class="stat-label">Platform Availability</div>
+    </div>
+  </section>
+
+  <!-- VISION -->
+  <section class="vision-section animate-scaleIn">
+    <h2>Looking Forward</h2>
+    <p>The journey doesn't stop here. I'm continuously working on new features like AI-powered study recommendations, interactive discussion forums, real-time collaboration tools, and mobile app development.</p>
+    <p>My vision is to make DME Study Hub the definitive academic companion for every Digital Media Engineering student, from freshman orientation to final year projects and beyond.</p>
+    <p>Together, we're building more than just a study platform—we're creating a legacy of knowledge sharing that will benefit DME students for years to come.</p>
+  </section>
+</main>
+
+<!-- footer -->
+<footer class="site-footer">
+  <div class="footer-top">
+    <!-- Logo & About -->
+    <div class="footer-logo">
+      <h2>DME Study Hub</h2>
+      <p>A note-sharing platform by Digital Media Engineering students – helping connect learning experiences across generations with quality resources.</p>
+    </div>
+
+    <div class="footer-right">
+    <!-- Main Menu -->
+    <div class="footer-links">
+      <h3>Main Menu</h3>
+      <ul>
+        <li><a href="home.html">Home</a></li>
+        <li><a href="find-note.html">Find Notes</a></li>
+        <li><a href="top-user.html">Top Contributors</a></li>
+        <li><a href="upload.html">Upload</a></li>
+      </ul>
+    </div>
+
+    <!-- Help -->
+    <div class="footer-help">
+      <h3>Help & Support</h3>
+      <ul>
+        <li><a href="#">FAQs</a></li>
+        <li><a href="#">User Guide</a></li>
+        <li><a href="#">Contact Team</a></li>
+        <li><a href="#">Report an Issue</a></li>
+      </ul>
+    </div>
+
+    <!-- Contact -->
+    <div class="footer-contact">
+      <h3>Connect With Us</h3>
+      <p>Email: dme.studyhub@gmail.com</p>
+      <div class="social-icons">
+        <a href="#"><i data-feather="facebook"></i></a>
+        <a href="#"><i data-feather="instagram"></i></a>
+        <a href="#"><i data-feather="mail"></i></a>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <div class="footer-bottom">
+    <p>&copy; <span id="year"></span> DME Study Hub. All rights reserved.</p>
+  </div>
+</footer>
+
+<script src="https://unpkg.com/feather-icons"></script>
+<script>
+  feather.replace();
+  
+  // Intersection Observer for scroll animations
+  const observerOptions = {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.style.animationPlayState = 'running';
+        observer.unobserve(entry.target);
+      }
+    });
+  }, observerOptions);
+
+  // Initialize animations on page load
+  document.addEventListener('DOMContentLoaded', function() {
+    const animatedElements = document.querySelectorAll('[class*="animate-"]');
+    
+    animatedElements.forEach(element => {
+      // Set initial state without opacity change
+      element.style.animationPlayState = 'paused';
+      element.style.animationFillMode = 'both';
+      
+      // Observe element for scroll trigger
+      observer.observe(element);
+    });
+  });
+</script>
+</body>
+</html>

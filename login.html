@@ -1,0 +1,1096 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DME Study Hub - Sign In</title>
+    <link rel="stylesheet" href="nav-footer.css"> <!-- for front style -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"> <!-- for icons -->
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            overflow: hidden;
+            opacity: 0;
+            animation: pageLoad 0.8s ease-out forwards;
+        }
+
+        @keyframes pageLoad {
+            to {
+                opacity: 1;
+            }
+        }
+
+        .container {
+            display: flex;
+            height: 100vh;
+            animation: containerSlide 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        @keyframes containerSlide {
+            from {
+                transform: translateY(20px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        /* Top Alert Message */
+        .alert-container {
+            position: absolute;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 1000;
+            width: 100%;
+            max-width: 450px;
+        }
+
+
+        .alert {
+            padding: 14px 20px;
+            border-radius: 12px;
+            font-weight: 500;
+            font-size: 14px;
+            text-align: center;
+            transform: translateY(-100px);
+            opacity: 0;
+            transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(10px);
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+        }
+
+        .alert.show {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        .alert.hide {
+            transform: translateY(-100px);
+            opacity: 0;
+        }
+
+        .alert-success {
+            background: linear-gradient(135deg, #10b981, #059669);
+            color: white;
+            border: 1px solid rgba(16, 185, 129, 0.3);
+        }
+
+        .alert-error {
+            background: linear-gradient(135deg, #ef4444, #dc2626);
+            color: white;
+            border: 1px solid rgba(239, 68, 68, 0.3);
+        }
+        .alert-warning {
+            background: linear-gradient(135deg, #f59e0b, #d97706);
+            color: white;
+            border: 1px solid rgba(245, 158, 11, 0.3);
+        }
+
+        /* Left Panel - Hero Section */
+        .hero-panel {
+            flex: 1.2;
+            background: linear-gradient(135deg, #0b3d91 0%, #1e5bb8 50%, #2563eb 100%);
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 40px;
+            overflow: hidden;
+            animation: heroSlideIn 1.2s cubic-bezier(0.23, 1, 0.32, 1) forwards;
+        }
+
+        @keyframes heroSlideIn {
+            from {
+                transform: translateX(-60px);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        .hero-panel::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3') center/cover;
+            opacity: 0.1;
+            z-index: 1;
+        }
+
+        .floating-shapes {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: 2;
+        }
+
+        .shape {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            animation: float 20s infinite ease-in-out;
+        }
+
+        .shape:nth-child(1) {
+            width: 100px;
+            height: 100px;
+            top: 15%;
+            left: 10%;
+            animation-delay: 0s;
+        }
+
+        .shape:nth-child(2) {
+            width: 60px;
+            height: 60px;
+            top: 65%;
+            right: 15%;
+            animation-delay: 7s;
+        }
+
+        .shape:nth-child(3) {
+            width: 80px;
+            height: 80px;
+            bottom: 20%;
+            left: 20%;
+            animation-delay: 14s;
+        }
+
+        @keyframes float {
+            0%, 100% { 
+                transform: translateY(0px) rotate(0deg); 
+                opacity: 0.1;
+            }
+            50% { 
+                transform: translateY(-30px) rotate(180deg); 
+                opacity: 0.3;
+            }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 10;
+            text-align: center;
+            max-width: 480px;
+            color: white;
+            animation: heroContentFade 1.5s ease-out 0.3s both;
+        }
+
+        @keyframes heroContentFade {
+            from {
+                transform: translateY(30px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .brand-logo {
+            width: 70px;
+            height: 70px;
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            font-weight: 800;
+            color: white;
+            margin: 0 auto 30px;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            animation: logoFloat 4s ease-in-out infinite;
+        }
+
+        @keyframes logoFloat {
+            0%, 100% { 
+                transform: translateY(0px) scale(1);
+                box-shadow: 0 8px 25px rgba(255, 255, 255, 0.15);
+            }
+            50% { 
+                transform: translateY(-8px) scale(1.05);
+                box-shadow: 0 15px 35px rgba(255, 255, 255, 0.25);
+            }
+        }
+
+        .hero-title {
+            font-size: 38px;
+            font-weight: 700;
+            margin-bottom: 16px;
+            line-height: 1.2;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .hero-subtitle {
+            font-size: 16px;
+            line-height: 1.5;
+            opacity: 0.9;
+            margin-bottom: 40px;
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+        }
+
+        .hero-features {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            margin-bottom: 32px;
+        }
+
+        .feature-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 16px;
+            padding: 20px 16px;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            cursor: pointer;
+            animation: cardFadeIn 0.8s ease-out forwards;
+            animation-delay: calc(var(--i) * 0.15s);
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        @keyframes cardFadeIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .feature-card:hover {
+            transform: translateY(-6px) scale(1.02);
+            background: rgba(255, 255, 255, 0.18);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+        }
+
+        .feature-icon {
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 12px;
+            font-size: 16px;
+            color: white;
+            transition: all 0.3s ease;
+        }
+
+        .feature-card:hover .feature-icon {
+            background: rgba(255, 255, 255, 0.3);
+            transform: scale(1.1);
+        }
+
+        .feature-title {
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+
+        .feature-desc {
+            font-size: 11px;
+            opacity: 0.8;
+            line-height: 1.3;
+        }
+
+        /* Right Panel - Login Form */
+        .login-panel {
+            flex: 1;
+            background: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            position: relative;
+            animation: loginSlideIn 1.2s cubic-bezier(0.23, 1, 0.32, 1) 0.2s both;
+        }
+
+        @keyframes loginSlideIn {
+            from {
+                transform: translateX(60px);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        .login-container {
+            width: 100%;
+            max-width: 400px;
+            animation: formFadeIn 1s ease-out 0.6s both;
+        }
+
+        @keyframes formFadeIn {
+            from {
+                transform: translateY(20px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .login-header {
+    margin-bottom: 32px;
+    text-align: center;
+}
+
+.welcome-badge {
+    background: linear-gradient(135deg, rgba(11, 61, 145, 0.12), rgba(30, 91, 184, 0.18));
+    color: #0b3d91;
+    padding: 10px 20px;
+    border-radius: 25px;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 24px;
+    border: 1px solid rgba(11, 61, 145, 0.2);
+    transition: all 0.3s ease;
+    animation: badgeFloat 3s ease-in-out infinite;
+    box-shadow: 0 4px 12px rgba(11, 61, 145, 0.1);
+}
+
+.welcome-badge i {
+    font-size: 14px;
+    animation: iconRotate 4s ease-in-out infinite;
+}
+
+@keyframes iconRotate {
+    0%, 100% { transform: rotate(0deg); }
+    50% { transform: rotate(5deg); }
+}
+
+.login-title {
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 16px;
+    line-height: 1.2;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.title-gradient {
+    background: linear-gradient(135deg, #1a202c, #4a5568);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-size: 0.85em;
+    font-weight: 600;
+}
+
+.title-accent {
+    background: linear-gradient(135deg, #0b3d91, #1e5bb8, #2563eb);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-weight: 800;
+    font-size: 1.1em;
+    text-shadow: 0 2px 4px rgba(11, 61, 145, 0.1);
+}
+
+.login-subtitle {
+    color: #64748b;
+    font-size: 15px;
+    line-height: 1.6;
+    max-width: 380px;
+    margin: 0 auto;
+}
+
+        /* Form Styles */
+        .login-form {
+            margin-bottom: 28px;
+        }
+
+        .form-group {
+            margin-bottom: 18px;
+            position: relative;
+        }
+
+        .form-label {
+            display: block;
+            font-size: 13px;
+            font-weight: 600;
+            color: #374151;
+            margin-bottom: 6px;
+            transition: all 0.3s ease;
+        }
+
+        .input-wrapper {
+            position: relative;
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 12px 14px;
+            border: 2px solid #e5e7eb;
+            border-radius: 10px;
+            font-size: 14px;
+            background: #ffffff;
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            outline: none;
+            color: #1a202c;
+        }
+
+        .form-input::placeholder {
+            color: #9ca3af;
+        }
+
+        .form-input:focus {
+            border-color: #0b3d91;
+            box-shadow: 0 0 0 3px rgba(11, 61, 145, 0.1);
+            transform: translateY(-2px);
+        }
+
+        .input-icon {
+            position: absolute;
+            right: 12px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #9ca3af;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            background: none;
+            border: none;
+            padding: 6px;
+            border-radius: 4px;
+        }
+
+        .input-icon:hover {
+            color: #0b3d91;
+            background: rgba(11, 61, 145, 0.1);
+        }
+
+        .form-options {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 24px;
+        }
+
+        .checkbox-wrapper {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            cursor: pointer;
+        }
+
+        .custom-checkbox {
+            position: relative;
+            width: 18px;
+            height: 18px;
+            flex-shrink: 0;
+        }
+
+        .custom-checkbox input {
+            opacity: 0;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            cursor: pointer;
+            margin: 0;
+        }
+
+        .checkmark {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 18px;
+            height: 18px;
+            background: #ffffff;
+            border: 2px solid #e5e7eb;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .custom-checkbox input:checked + .checkmark {
+            background: #0b3d91;
+            border-color: #0b3d91;
+        }
+
+        .checkmark i {
+            color: white;
+            font-size: 10px;
+            opacity: 0;
+            transition: opacity 0.2s ease;
+        }
+
+        .custom-checkbox input:checked + .checkmark i {
+            opacity: 1;
+        }
+
+        .checkbox-label {
+            font-size: 13px;
+            color: #6b7280;
+            cursor: pointer;
+        }
+
+        .forgot-link {
+            color: #0b3d91;
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .forgot-link::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #0b3d91;
+            transition: width 0.3s ease;
+        }
+
+        .forgot-link:hover {
+            color: #083166;
+        }
+
+        .forgot-link:hover::after {
+            width: 100%;
+        }
+
+        .btn-primary {
+            width: 100%;
+            padding: 12px;
+            background: linear-gradient(135deg, #0b3d91, #1e5bb8);
+            border: none;
+            border-radius: 10px;
+            color: white;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-primary::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.6s ease;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 35px rgba(11, 61, 145, 0.3);
+        }
+
+        .btn-primary:hover::before {
+            left: 100%;
+        }
+
+        .btn-primary:active {
+            transform: translateY(-1px);
+        }
+
+        /* Loading State */
+        .loading {
+            position: relative;
+            color: transparent;
+            pointer-events: none;
+        }
+
+        .loading::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 18px;
+            height: 18px;
+            margin-left: -9px;
+            margin-top: -9px;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-top: 2px solid white;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Divider */
+        .divider {
+            position: relative;
+            text-align: center;
+            margin: 24px 0;
+        }
+
+        .divider::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, #e5e7eb, transparent);
+        }
+
+        .divider-text {
+            background: white;
+            padding: 0 16px;
+            color: #9ca3af;
+            font-size: 11px;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+        }
+
+        /* KKU Button */
+        .btn-kku {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #e5e7eb;
+            border-radius: 10px;
+            background: white;
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            font-size: 14px;
+            font-weight: 600;
+            color: #374151;
+            text-decoration: none;
+            margin-bottom: 28px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-kku::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            background: rgba(11, 61, 145, 0.05);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            transition: all 0.5s ease;
+        }
+
+        .btn-kku:hover::before {
+            width: 300px;
+            height: 300px;
+        }
+
+        .btn-kku:hover {
+            border-color: #0b3d91;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .kku-icon {
+            width: 26px;
+            height: 26px;
+            background: linear-gradient(135deg, #0b3d91, #1e5bb8);
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 11px;
+            position: relative;
+            z-index: 10;
+        }
+
+        .signup-section {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #f3f4f6;
+        }
+
+        .signup-text {
+            color: #6b7280;
+            font-size: 14px;
+        }
+
+        .signup-link {
+            color: #0b3d91;
+            text-decoration: none;
+            font-weight: 600;
+            margin-left: 4px;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .signup-link::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #0b3d91;
+            transition: width 0.3s ease;
+        }
+
+        .signup-link:hover {
+            color: #083166;
+        }
+
+        .signup-link:hover::after {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Left Panel - Hero Section -->
+        <div class="hero-panel">
+            <div class="floating-shapes">
+                <div class="shape"></div>
+                <div class="shape"></div>
+                <div class="shape"></div>
+            </div>
+            
+            <div class="hero-content">
+                <div class="brand-logo">DME</div>
+                <h1 class="hero-title">Empower Your Learning Journey</h1>
+                <p class="hero-subtitle">Join the premier community for Digital Media Engineering students. Access verified materials, connect with peers, and accelerate your academic success.</p>
+                
+                <div class="hero-features">
+                    <div class="feature-card" style="--i: 0;">
+                        <div class="feature-icon">
+                            <i class="fas fa-certificate"></i>
+                        </div>
+                        <div class="feature-title">Verified Content</div>
+                        <div class="feature-desc">Quality-checked study materials from top-performing students</div>
+                    </div>
+                    <div class="feature-card" style="--i: 1;">
+                        <div class="feature-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <div class="feature-title">Active Network</div>
+                        <div class="feature-desc">Connect with 200+ DME students, seniors, and mentors</div>
+                    </div>
+                    <div class="feature-card" style="--i: 2;">
+                        <div class="feature-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="feature-title">24/7 Access</div>
+                        <div class="feature-desc">Study anytime, anywhere with our secure cloud platform</div>
+                    </div>
+                    <div class="feature-card" style="--i: 3;">
+                        <div class="feature-icon">
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <div class="feature-title">Highly Rated</div>
+                        <div class="feature-desc">90% student satisfaction rate with our study resources</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right Panel - Login Form -->
+        <div class="login-panel">
+            <!-- Top Alert Container -->
+            <div class="alert-container">
+                <div id="successAlert" class="alert alert-success">
+                    <i class="fas fa-check-circle"></i> Login successful! Redirecting to your dashboard...
+                </div>
+                <div id="errorAlert" class="alert alert-error">
+                    <i class="fas fa-exclamation-triangle"></i> Invalid credentials. Please check your email and password.
+                </div>
+                <div id="warningAlert" class="alert alert-warning">
+                    <i class="fas fa-exclamation-circle"></i> Please fill in both email and password fields.
+                </div>
+            </div>
+
+            <div class="login-container">
+                <div class="login-header">
+    <div class="welcome-badge">
+        <i class="fas fa-graduation-cap"></i>
+        <span>Student Portal</span>
+    </div>
+    <h2 class="login-title">
+        <span class="title-gradient">Welcome to</span>
+        <span class="title-accent">DME Study Hub</span>
+    </h2>
+    <p class="login-subtitle">
+        <span class="subtitle-highlight">Sign in to access</span> your personalized learning dashboard, exclusive study materials, and connect with fellow 
+        <strong class="community-text">Digital Media Engineering</strong> students.
+    </p>
+</div>
+
+                <form class="login-form" id="loginForm" novalidate>
+                    <div class="form-group">
+                        <label class="form-label" for="email">Email Address</label>
+                        <div class="input-wrapper">
+                            <input 
+                                type="email" 
+                                class="form-input" 
+                                id="email" 
+                                placeholder="student@dme.ac.th" 
+                                required
+                                autocomplete="email"
+                            >
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label" for="password">Password</label>
+                        <div class="input-wrapper">
+                            <input 
+                                type="password" 
+                                class="form-input" 
+                                id="password" 
+                                placeholder="Enter your password" 
+                                required
+                                autocomplete="current-password"
+                                style="padding-right: 42px;"
+                            >
+                            <button type="button" class="input-icon password-toggle" onclick="togglePassword()">
+                                <i class="fas fa-eye" id="eyeIcon"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="form-options">
+                        <label class="checkbox-wrapper" for="remember">
+                            <div class="custom-checkbox">
+                                <input type="checkbox" id="remember">
+                                <span class="checkmark">
+                                    <i class="fas fa-check"></i>
+                                </span>
+                            </div>
+                            <span class="checkbox-label">Keep me signed in</span>
+                        </label>
+                        <a href="#" class="forgot-link">Forgot password?</a>
+                    </div>
+
+                    <button type="submit" class="btn-primary" id="loginBtn">
+                        Sign in to your account
+                    </button>
+                </form>
+
+                <div class="divider">
+                    <span class="divider-text">OR CONTINUE WITH</span>
+                </div>
+
+                <a href="#" class="btn-kku">
+                    <div class="kku-icon">KKU</div>
+                    <span>Sign in with KKU Mail</span>
+                </a>
+
+                <div class="signup-section">
+                    <p class="signup-text">
+                        Don't have an account?
+                        <a href="register.html" class="signup-link">Create account</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Show alert function
+        function showAlert(type, duration = 3000) {
+            const alertTypes = {
+                'success': 'successAlert',
+                'error': 'errorAlert',
+                'warning': 'warningAlert'
+            };
+            
+            const alertId = alertTypes[type];
+            const alert = document.getElementById(alertId);
+            
+            // Hide other alerts first
+            document.querySelectorAll('.alert').forEach(a => {
+                if (a.id !== alertId) {
+                    a.classList.remove('show');
+                    a.classList.add('hide');
+                }
+            });
+            
+            // Show current alert
+            alert.classList.remove('hide');
+            alert.classList.add('show');
+            
+            // Auto hide after duration
+            setTimeout(() => {
+                alert.classList.remove('show');
+                alert.classList.add('hide');
+            }, duration);
+        }
+
+        // Password toggle functionality
+        function togglePassword() {
+            const passwordField = document.getElementById('password');
+            const eyeIcon = document.getElementById('eyeIcon');
+            
+            if (passwordField.type === 'password') {
+                passwordField.type = 'text';
+                eyeIcon.className = 'fas fa-eye-slash';
+            } else {
+                passwordField.type = 'password';
+                eyeIcon.className = 'fas fa-eye';
+            }
+        }
+
+        // Form submission handler
+        document.getElementById('loginForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            const loginBtn = document.getElementById('loginBtn');
+            const email = document.getElementById('email').value.trim();
+            const password = document.getElementById('password').value;
+            
+            // Validate before loading
+            if (!email || !password) {
+                showAlert('warning');
+                return;
+            }
+
+            if (password.length < 6) {
+                showAlert('error');
+                return;
+            }
+            
+            // Show loading state only after validation passes
+            loginBtn.classList.add('loading');
+            loginBtn.disabled = true;
+            
+            // Simulate API call
+            try {
+                await new Promise(resolve => setTimeout(resolve, 1500));
+                
+                // If validation passes
+                showAlert('success', 2500);
+
+                // Redirect to home page after showing success message
+                setTimeout(() => {
+                    window.location.href = 'home.html';
+                }, 2000);
+                
+            } catch (err) {
+                showAlert('error');
+                loginBtn.classList.remove('loading');
+                loginBtn.disabled = false;
+            }
+        });
+
+        // Input focus animations and validation
+        const inputs = document.querySelectorAll('.form-input');
+        inputs.forEach(input => {
+            input.addEventListener('focus', function() {
+                const label = this.parentElement.parentElement.querySelector('.form-label');
+                if (label) {
+                    label.style.color = '#0b3d91';
+                    label.style.transform = 'translateY(-2px)';
+                }
+            });
+            
+            input.addEventListener('blur', function() {
+                const label = this.parentElement.parentElement.querySelector('.form-label');
+                if (label) {
+                    label.style.color = '#374151';
+                    label.style.transform = 'translateY(0)';
+                }
+            });
+
+            // Real-time validation
+            input.addEventListener('input', function() {
+                if (this.type === 'email') {
+                    const isValid = this.checkValidity();
+                    if (isValid && this.value.length > 0) {
+                        this.style.borderColor = '#10b981';
+                        this.style.boxShadow = '0 0 0 3px rgba(16, 185, 129, 0.1)';
+                    } else if (this.value.length > 0) {
+                        this.style.borderColor = '#ef4444';
+                        this.style.boxShadow = '0 0 0 3px rgba(239, 68, 68, 0.1)';
+                    } else {
+                        this.style.borderColor = '#e5e7eb';
+                        this.style.boxShadow = 'none';
+                    }
+                } else if (this.type === 'password') {
+                    const strength = checkPasswordStrength(this.value);
+                    if (strength > 2) {
+                        this.style.borderColor = '#10b981';
+                        this.style.boxShadow = '0 0 0 3px rgba(16, 185, 129, 0.1)';
+                    } else if (strength > 0) {
+                        this.style.borderColor = '#f59e0b';
+                        this.style.boxShadow = '0 0 0 3px rgba(245, 158, 11, 0.1)';
+                    } else if (this.value.length > 0) {
+                        this.style.borderColor = '#ef4444';
+                        this.style.boxShadow = '0 0 0 3px rgba(239, 68, 68, 0.1)';
+                    } else {
+                        this.style.borderColor = '#e5e7eb';
+                        this.style.boxShadow = 'none';
+                    }
+                }
+            });
+        });
+
+        // Password strength checker
+        function checkPasswordStrength(password) {
+            let strength = 0;
+            if (password.length >= 8) strength++;
+            if (/[a-z]/.test(password)) strength++;
+            if (/[A-Z]/.test(password)) strength++;
+            if (/[0-9]/.test(password)) strength++;
+            if (/[^A-Za-z0-9]/.test(password)) strength++;
+            return strength;
+        }
+
+        // Enhanced checkbox interactions
+        const checkboxWrapper = document.querySelector('.checkbox-wrapper');
+        checkboxWrapper.addEventListener('mouseenter', function() {
+            this.querySelector('.checkmark').style.borderColor = '#0b3d91';
+            this.querySelector('.checkmark').style.transform = 'scale(1.05)';
+        });
+
+        checkboxWrapper.addEventListener('mouseleave', function() {
+            if (!this.querySelector('input').checked) {
+                this.querySelector('.checkmark').style.borderColor = '#e5e7eb';
+            }
+            this.querySelector('.checkmark').style.transform = 'scale(1)';
+        });
+    </script>
+</body>
+</html>
