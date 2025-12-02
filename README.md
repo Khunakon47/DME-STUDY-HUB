@@ -28,9 +28,6 @@ Future updates may include:
 - File upload system  
 - Search and filtering features  
 
-## 🎨 Screenshots
-(Add your screenshots here)
-
 ## 📄 License
 This project is for educational and personal development purposes.
 
